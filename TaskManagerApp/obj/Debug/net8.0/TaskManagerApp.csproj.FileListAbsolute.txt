@@ -1,0 +1,14 @@
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\bin\Debug\net8.0\TaskManagerApp.exe
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\bin\Debug\net8.0\TaskManagerApp.deps.json
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\bin\Debug\net8.0\TaskManagerApp.runtimeconfig.json
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\bin\Debug\net8.0\TaskManagerApp.dll
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\bin\Debug\net8.0\TaskManagerApp.pdb
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.AssemblyInfoInputs.cache
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.AssemblyInfo.cs
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.csproj.CoreCompileInputs.cache
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.dll
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\refint\TaskManagerApp.dll
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.pdb
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.genruntimeconfig.cache
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\ref\TaskManagerApp.dll
