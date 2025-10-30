@@ -12,3 +12,4 @@ D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\refint
 D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.pdb
 D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.genruntimeconfig.cache
 D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\ref\TaskManagerApp.dll
+D:\Vika\universiti\IZR_lab\TaskManagerApp\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.sourcelink.json
