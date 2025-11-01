@@ -35,11 +35,11 @@ namespace TaskManagerApp.Tests
             var task = new TaskItem("Test Title", "Test Description");
             service.AddTask(task);
             //Act
-            var IsTaskRemoved = service.RemoveTask("Test Title");
+            var isTaskRemoved = service.RemoveTask("Test Title");
             //Assert
             var tasks = service.GetAllTasks();
             Assert.That(tasks.Count(), Is.EqualTo(0));
-            Assert.That(IsTaskRemoved, Is.True);
+            Assert.That(isTaskRemoved, Is.True);
         }
 
         [Test]
@@ -49,15 +49,15 @@ namespace TaskManagerApp.Tests
             var task = new TaskItem("Test Title", "Test Description");
             service.AddTask(task);
             //Act
-            var IsTaskRemoved = service.RemoveTask("Test Title Failed Remove");
+            var isTaskRemoved = service.RemoveTask("Test Title Failed Remove");
             //Assert
             var tasks = service.GetAllTasks();
             Assert.That(tasks.Count(), Is.EqualTo(1));
-            Assert.That(IsTaskRemoved, Is.False);
+            Assert.That(isTaskRemoved, Is.False);
         }
 
         [Test]
-        public void GetByState_ShouldReturnTaskByState_WhenTaskIsFound()
+        public void GetByState_ShouldReturnTaskInProgress_WhenTaskIsFound()
         {
             // Arrange
             var task = new TaskItem("Test Title", "Test Description");
@@ -65,9 +65,130 @@ namespace TaskManagerApp.Tests
             service.AddTask(task);
             //Act
             var tasks = service.GetByState(TaskState.InProgress);
-             //Assert
+            //Assert
             Assert.That(tasks.Count(), Is.EqualTo(1));
             Assert.That(tasks.First().State, Is.EqualTo(TaskState.InProgress));
+            Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
+        }
+
+        [Test]
+        public void GetByState_ShouldReturnTaskCompleted_WhenTaskIsFound()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            task.MarkCompleted();
+            service.AddTask(task);
+            //Act
+            var tasks = service.GetByState(TaskState.Completed);
+            //Assert
+            Assert.That(tasks.Count(), Is.EqualTo(1));
+            Assert.That(tasks.First().State, Is.EqualTo(TaskState.Completed));
+            Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
+        }
+
+        [Test]
+        public void GetByState_ShouldReturnTaskPending_WhenTaskIsFound()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            var tasks = service.GetByState(TaskState.Pending);
+            //Assert
+            Assert.That(tasks.Count(), Is.EqualTo(1));
+            Assert.That(tasks.First().State, Is.EqualTo(TaskState.Pending));
+            Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
+        }
+
+        [Test]
+        public void GetByState_ShouldReturnEmptyList_WhenTaskIsNotFound()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            var tasks = service.GetByState(TaskState.InProgress);
+            //Assert
+            Assert.That(tasks, Is.Empty);
+        }
+
+        [Test]
+        public void FindTask_ShouldReturnTask_WhenTaskIsFound()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            var taskByTitle = service.FindTask("Test Title");
+            //Assert
+            Assert.That(taskByTitle, Is.Not.Null);
+            Assert.That(taskByTitle.Title, Is.EqualTo("Test Title"));
+        }
+
+        [Test]
+        public void FindTask_ShouldReturnNull_WhenTaskIsNotFound()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            var taskByTitle = service.FindTask("Test Title Failed");
+            //Assert
+            Assert.That(taskByTitle, Is.Null);
+
+        }
+
+        [Test]
+        public void GetCompletionRate_ShouldReturnCompletionRate()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            task.MarkCompleted();
+            service.AddTask(task);
+            //Act
+            var completionRate = service.GetCompletionRate();
+            //Assert
+            Assert.That(completionRate, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void GetCompletionRate_ShouldReturnZeroRate()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            var completionRate = service.GetCompletionRate();
+            //Assert
+            Assert.That(completionRate, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void GetCompletionRate_ShouldReturnPartialRate()
+        {
+            // Arrange
+            var completedTask = new TaskItem("Completed Task", "Done");
+            completedTask.MarkCompleted();
+            var pendingTask = new TaskItem("Pending Task", "Not done");
+            service.AddTask(completedTask);
+            service.AddTask(pendingTask);
+            // Act
+            var completionRate = service.GetCompletionRate();
+            // Assert
+            Assert.That(completionRate, Is.EqualTo(0.5));
+        }
+
+
+        [Test]
+        public void ClearAll_ShouldRemoveAllTasks()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "Test Description");
+            service.AddTask(task);
+            //Act
+            service.ClearAll();
+            //Assert
+            Assert.That(service.GetAllTasks(), Is.Empty);
         }
 
 
