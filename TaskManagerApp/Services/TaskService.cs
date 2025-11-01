@@ -48,9 +48,9 @@ namespace TaskManagerApp.Services
             return true;
         }
         
-        /// <summary>
+        
         /// Знайти завдання за назвою
-        /// </summary>
+        
         public TaskItem? FindTask(string title)
         {
             return _tasks.FirstOrDefault(t => t.Title == title);
