@@ -21,6 +21,10 @@ namespace TaskManagerApp.Models
 
         public TaskItem(string title, string description)
         {
+            //fixed after testing
+            if (string.IsNullOrEmpty(title))
+                throw new ArgumentNullException(nameof(title), "Title cannot be null or empty.");
+
             Title = title;
             Description = description;
             State = TaskState.Pending;

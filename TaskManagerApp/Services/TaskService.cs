@@ -16,43 +16,54 @@ namespace TaskManagerApp.Services
             _tasks = new List<TaskItem>();
         }
 
-        
+        /// <summary>
         /// Додати нове завдання
-        
+        /// </summary>
         public void AddTask(TaskItem task)
         {
+            //fixed after testing
+            if (task == null)
+                throw new ArgumentNullException(nameof(task), "Task cannot be null.");
             _tasks.Add(task);
         }
 
-        
+        /// <summary>
         /// Отримати всі завдання
-        
+        /// </summary>
         public IEnumerable<TaskItem> GetAllTasks() => _tasks;
 
-        
+        /// <summary>
         /// Отримати завдання за певним станом (Pending, InProgress, Completed)
-        
+        /// </summary>
         public IEnumerable<TaskItem> GetByState(TaskState state)
         {
             return _tasks.Where(t => t.State == state);
         }
 
-
+        /// <summary>
         /// Видалити завдання за назвою
-
+        /// </summary>
         public bool RemoveTask(string title)
         {
+            //fixed after testing
+            if (title == null)
+                throw new ArgumentNullException(nameof(title), "Title cannot be null.");
+
             var task = _tasks.FirstOrDefault(t => t.Title == title);
             if (task == null) return false;
             _tasks.Remove(task);
             return true;
         }
         
-        
+        /// <summary>
         /// Знайти завдання за назвою
-        
+        /// </summary>
         public TaskItem? FindTask(string title)
         {
+             //fixed after testing
+            if (title == null)
+                throw new ArgumentNullException(nameof(title), "Title cannot be null.");
+
             return _tasks.FirstOrDefault(t => t.Title == title);
         }
 

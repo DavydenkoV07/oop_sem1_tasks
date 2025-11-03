@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using TaskManagerApp.Models;
+using System.Linq;
 
 namespace TaskManagerApp.Tests
 {
@@ -21,6 +22,12 @@ namespace TaskManagerApp.Tests
             // Assert
             Assert.That(_task.Title, Is.EqualTo("Test Task"));
             Assert.That(_task.Description, Is.EqualTo("Test Description"));
+        }
+
+        [Test]
+        public void TaskItem_ShouldNotInitializeTask_WhenTiteIsNull()
+        {
+            Assert.Throws<ArgumentNullException>(() => _task = new TaskItem( null, "Test Description"));
         }
 
         [Test]
