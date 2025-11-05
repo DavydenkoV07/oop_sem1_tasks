@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using TaskManagerApp.Models;
-using System.Linq;
+using System;
+
 
 namespace TaskManagerApp.Tests
 {
@@ -25,13 +26,29 @@ namespace TaskManagerApp.Tests
         }
 
         [Test]
-        public void TaskItem_ShouldNotInitializeTask_WhenTiteIsNull()
+        public void TaskItem_ShouldNotInitializeTask_WhenTitleIsNull()
         {
-            Assert.Throws<ArgumentNullException>(() => _task = new TaskItem( null, "Test Description"));
+            Assert.Throws<ArgumentException>(() => new TaskItem(null, "Test Description"));
         }
 
         [Test]
-        public void TaskItem_ShouldInitializeTaskAndSetStateToPending()
+        public void TaskItem_ShouldAllowInitialization_WhenDescriptionIsEmpty()
+        {
+            _task = new TaskItem("Test Task", "");
+            Assert.That(_task.Title, Is.EqualTo("Test Task"));
+            Assert.That(_task.Description, Is.Empty);
+        }
+
+        [Test]
+        public void TaskItem_ShouldAllowInitialization_WhenDescriptionIsNull()
+        {
+            _task = new TaskItem("Test Task", null);
+            Assert.That(_task.Title, Is.EqualTo("Test Task"));
+            Assert.That(_task.Description, Is.Null);
+        }
+
+        [Test]
+        public void TaskItem_ShouldSetStateToPending_WhenInitialized()
         {
             // Arrange + Act handled in SetUp
             // Assert

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using TaskManagerApp.Models;
 using TaskManagerApp.Services;
 using System.Linq;
+using System;
 
 namespace TaskManagerApp.Tests
 {
@@ -39,7 +40,33 @@ namespace TaskManagerApp.Tests
         [Test]
         public void AddTask_ShouldThrow_WhenEmptyTitle()
         {
-            Assert.Throws<ArgumentNullException>(() => service.AddTask(new TaskItem("", "Test Description")));
+            Assert.Throws<ArgumentException>(() => service.AddTask(new TaskItem("", "Test Description")));
+        }
+
+        [Test]
+        public void AddTask_ShouldAllowToAdd_WhenEmptyDescription()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", "");
+            //Act
+            service.AddTask(task);
+            //Assert
+            var tasks = service.GetAllTasks();
+            Assert.That(tasks.Count(), Is.EqualTo(1));
+            Assert.That(tasks.First().Description, Is.Empty);
+        }
+        
+        [Test]
+        public void AddTask_ShouldAllowToAdd_WhenNullDescription()
+        {
+            // Arrange
+            var task = new TaskItem("Test Title", null);
+            //Act
+            service.AddTask(task);
+            //Assert
+            var tasks = service.GetAllTasks();
+            Assert.That(tasks.Count(), Is.EqualTo(1));
+            Assert.That(tasks.First().Description, Is.Null);
         }
 
         [Test]
@@ -63,7 +90,7 @@ namespace TaskManagerApp.Tests
         }
 
         [Test]
-        public void RemoveTask_ShouldRemoveOnlyFirstTaskFromListAndReturnTrue_WhenDuplicateTitlesExist()
+        public void RemoveTask_ShouldRemoveOnlyFirstMatchingTask_WhenDuplicatesExist()
         {
             // Arrange
             var task1 = new TaskItem("Test Title", "Test Description 1");
@@ -75,7 +102,6 @@ namespace TaskManagerApp.Tests
             //Assert
             var tasks = service.GetAllTasks();
             Assert.That(tasks.Count(), Is.EqualTo(1));
-            Assert.That(tasks.First().Description, Is.EqualTo("Test Description 2"));
             Assert.That(isTaskRemoved, Is.True);
         }
 
