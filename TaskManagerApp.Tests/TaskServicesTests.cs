@@ -1,3 +1,7 @@
+/**
+* @file TaskServicesTests.cs
+* @brief Unit Tests for TaskService.
+*/
 using NUnit.Framework;
 using TaskManagerApp.Models;
 using TaskManagerApp.Services;
@@ -6,18 +10,33 @@ using System;
 
 namespace TaskManagerApp.Tests
 {
+    
     [TestFixture]
+    /** 
+    * @class TaskServicesTests
+    * @brief Tests that verify TaskService functionality.
+    * 
+    */
     public class TaskServicesTests
     {
         private TaskService service;
 
         [SetUp]
+        /**
+        * @brief initialize new TaskService before each test
+        */
         public void Setup()
         {
             service = new TaskService();
         }
 
         [Test]
+        /**
+        * @brief Test checks if a new TaskItem is added to the service
+        * @test 
+        *      
+        * @see TaskService.AddTask(TaskItem)
+        */
         public void AddTask_ShouldAddNewTaskToList()
         {
             // Arrange
@@ -32,18 +51,37 @@ namespace TaskManagerApp.Tests
         }
 
         [Test]
+        /**
+        * @brief Checks if AddTask throws an exception when TaskItem is null
+        * @test 
+        * - calling AddTask with null argument
+        * - ArgumentNullException is thrown
+        *
+        * @exception ArgumentNullException thrown when TaskItem is null
+        * @see TaskService.AddTask(TaskItem)
+        */
         public void AddTask_ShouldThrow_WhenTaskIsNull()
         {
             Assert.Throws<ArgumentNullException>(() => service.AddTask(null));
         }
 
         [Test]
+        /**
+        * @brief Checks if AddTask throws an exception when TaskItem title is empty string
+        * @test Steps:
+        * - Initialize new TaskItem with empty title
+        * - Call AddTask  
+        * - ArgumentException is thrown
+        * @exception ArgumentException thrown if TaskItem title is empty string
+        * @see  TaskService.AddTask(TaskItem)
+        */
         public void AddTask_ShouldThrow_WhenEmptyTitle()
         {
             Assert.Throws<ArgumentException>(() => service.AddTask(new TaskItem("", "Test Description")));
         }
-
+        
         [Test]
+
         public void AddTask_ShouldAllowToAdd_WhenEmptyDescription()
         {
             // Arrange
