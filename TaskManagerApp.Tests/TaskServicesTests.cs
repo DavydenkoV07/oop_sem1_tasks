@@ -14,7 +14,7 @@ namespace TaskManagerApp.Tests
     [TestFixture]
     /** 
     * @class TaskServicesTests
-    * @brief Tests that verify TaskService functionality.
+    * @brief A set of tests that verify TaskService functionality.
     * 
     */
     public class TaskServicesTests
@@ -73,7 +73,7 @@ namespace TaskManagerApp.Tests
         * - Call AddTask  
         * - ArgumentException is thrown
         * @exception ArgumentException thrown if TaskItem title is empty string
-        * @see  TaskService.AddTask(TaskItem)
+        * @see TaskService.AddTask(TaskItem)
         */
         public void AddTask_ShouldThrow_WhenEmptyTitle()
         {
