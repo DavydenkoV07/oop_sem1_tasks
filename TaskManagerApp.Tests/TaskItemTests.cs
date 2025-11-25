@@ -1,6 +1,6 @@
 /**
 * @file TaskItem.cs
-* @brief 
+* @brief Contains a TaskItem model class and an associated TaskState list.
 */
 using NUnit.Framework;
 using TaskManagerApp.Models;
@@ -9,18 +9,18 @@ using System;
 
 namespace TaskManagerApp.Tests
 {
-    [TestFixture]
     /**
     * @class TaskItemTests 
     * @brief This class includes tests that verify TaskItem functionality.
-    * @property _task 
+    * @property _task initializes task.
     */
+    [TestFixture]
     public class TaskItemTests
     {
         private TaskItem _task;
 
         /**
-        *
+        * @brief Initializes the test TaskItem object before each test.
         */
         [SetUp]
         public void Setup()
@@ -28,6 +28,11 @@ namespace TaskManagerApp.Tests
             _task = new TaskItem("Test Task", "Test Description");
         }
 
+        /**
+        * @brief Test: Checks that the TaskItem constructor correctly initializes the Title and Description properties.
+        * @see Setup()
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
         public void TaskItem_ShouldInitializeTitleAndDescription()
         {
@@ -37,12 +42,21 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.Description, Is.EqualTo("Test Description"));
         }
 
+        /**
+        * @brief Test: Checks that the TaskItem constructor throws an ArgumentException when the Title field is null.
+        * @throws ArgumentException The constructor is expected to throw this exception when passed null.
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
         public void TaskItem_ShouldNotInitializeTask_WhenTitleIsNull()
         {
             Assert.Throws<ArgumentException>(() => new TaskItem(null, "Test Description"));
         }
 
+        /**
+        * @brief Test: Checks that the TaskItem constructor allows initialization with an empty description.
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
         public void TaskItem_ShouldAllowInitialization_WhenDescriptionIsEmpty()
         {
@@ -51,6 +65,10 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.Description, Is.Empty);
         }
 
+        /**
+        * @brief Test: Checks that the TaskItem constructor allows initialization with a null description.
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
         public void TaskItem_ShouldAllowInitialization_WhenDescriptionIsNull()
         {
@@ -59,6 +77,11 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.Description, Is.Null);
         }
 
+        /**
+        * @brief Test: Checks that the TaskItem constructor sets the initial task state to Pending.
+        * @see TaskItem::TaskItem(string, string)
+        * @see Setup()
+        */
         [Test]
         public void TaskItem_ShouldSetStateToPending_WhenInitialized()
         {
@@ -67,6 +90,10 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.State, Is.EqualTo(TaskState.Pending));
         }
 
+        /**
+        * @brief Test: Checks that the MarkCompleted() method sets the task state to Completed.
+        * @see TaskItem::MarkCompleted()
+        */
         [Test]
         public void MarkCompleted_ShouldSetStateToCompleted()
         {
@@ -74,6 +101,10 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.State, Is.EqualTo(TaskState.Completed));
         }
 
+        /**
+        * @brief Test: Checks that the Start() method sets the task state to InProgress.
+        * @see TaskItem::Start()
+        */
         [Test]
         public void Start_ShouldSetStateToInProgress()
         {
@@ -81,6 +112,10 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.State, Is.EqualTo(TaskState.InProgress));
         }
 
+        /**
+        * @brief Test: Checks that the Reset() method sets the task state to Pending from Completed.
+        * @see TaskItem::Reset()
+        */
         [Test]
         public void Reset_ShouldSetStateToPending_WhenTaskWasCompleted()
         {
@@ -91,6 +126,10 @@ namespace TaskManagerApp.Tests
             Assert.That(_task.State, Is.EqualTo(TaskState.Pending));
         }
 
+        /**
+        * @brief Test: Checks that the Reset() method sets the task state to Pending from InProgress.
+        * @see TaskItem::Reset()
+        */
         [Test]
         public void Reset_ShouldSetStateToPending_WhenTaskWasInProgress()
         {

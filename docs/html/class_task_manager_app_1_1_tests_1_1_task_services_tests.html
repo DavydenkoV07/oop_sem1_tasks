@@ -108,24 +108,43 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f1ed8b438da38a1f9d0fe9035699a89" id="r_a7f1ed8b438da38a1f9d0fe9035699a89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1ed8b438da38a1f9d0fe9035699a89">AddTask_ShouldAllowToAdd_WhenEmptyDescription</a> ()</td></tr>
 <tr class="memdesc:a7f1ed8b438da38a1f9d0fe9035699a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test Checks whether the system allows adding a task with an empty description.  <br /></td></tr>
 <tr class="memitem:a7556325d81b19b834f1cb4167d4632a5" id="r_a7556325d81b19b834f1cb4167d4632a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7556325d81b19b834f1cb4167d4632a5">AddTask_ShouldAllowToAdd_WhenNullDescription</a> ()</td></tr>
+<tr class="memdesc:a7556325d81b19b834f1cb4167d4632a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: checks if the system allows adding tasks with a 'null' value in the description.  <br /></td></tr>
 <tr class="memitem:afa137f087620bb3cdb81bddb075dd638" id="r_afa137f087620bb3cdb81bddb075dd638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa137f087620bb3cdb81bddb075dd638">RemoveTask_ShouldRemoveTaskFromListAndReturnTrue_WhenTaskIsFound</a> ()</td></tr>
+<tr class="memdesc:afa137f087620bb3cdb81bddb075dd638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: verifies successful removal of an existing task from the list.  <br /></td></tr>
 <tr class="memitem:a306dacf7711833fa8e495ad47cbe61e4" id="r_a306dacf7711833fa8e495ad47cbe61e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306dacf7711833fa8e495ad47cbe61e4">RemoveTask_ShouldThrow_WhenTaskTitleIsNull</a> ()</td></tr>
+<tr class="memdesc:a306dacf7711833fa8e495ad47cbe61e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that the RemoveTask() method throws an ArgumentNullException if the task title is null.  <br /></td></tr>
 <tr class="memitem:aa56d5ebc262efe786e0175ab2dcab72b" id="r_aa56d5ebc262efe786e0175ab2dcab72b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa56d5ebc262efe786e0175ab2dcab72b">RemoveTask_ShouldRemoveOnlyFirstMatchingTask_WhenDuplicatesExist</a> ()</td></tr>
+<tr class="memdesc:aa56d5ebc262efe786e0175ab2dcab72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that RemoveTask() only removes the first task found, if there are duplicate names.  <br /></td></tr>
 <tr class="memitem:aaeba9f5ddaaf4f80939480ac496e5dda" id="r_aaeba9f5ddaaf4f80939480ac496e5dda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeba9f5ddaaf4f80939480ac496e5dda">RemoveTask_ShouldReturnFalse_WhenTaskIsNotFound</a> ()</td></tr>
+<tr class="memdesc:aaeba9f5ddaaf4f80939480ac496e5dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Verifies that RemoveTask() returns false when a task is not found.  <br /></td></tr>
 <tr class="memitem:aa7eb629ba691cc1693f9080abbd388ad" id="r_aa7eb629ba691cc1693f9080abbd388ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7eb629ba691cc1693f9080abbd388ad">GetByState_ShouldReturnTaskInProgress_WhenTaskIsFound</a> ()</td></tr>
+<tr class="memdesc:aa7eb629ba691cc1693f9080abbd388ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: verifies that GetByState() returns a task with a state InProgress.  <br /></td></tr>
 <tr class="memitem:abe7e4f38fba9106851960c2bc0ac8bc4" id="r_abe7e4f38fba9106851960c2bc0ac8bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7e4f38fba9106851960c2bc0ac8bc4">GetByState_ShouldReturnTaskCompleted_WhenTaskIsFound</a> ()</td></tr>
+<tr class="memdesc:abe7e4f38fba9106851960c2bc0ac8bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: verifies that GetByState() returns a task with a state Completed.  <br /></td></tr>
 <tr class="memitem:a71a3309fbaefa560895a2b29622e1bfa" id="r_a71a3309fbaefa560895a2b29622e1bfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71a3309fbaefa560895a2b29622e1bfa">GetByState_ShouldReturnTaskPending_WhenTaskIsFound</a> ()</td></tr>
+<tr class="memdesc:a71a3309fbaefa560895a2b29622e1bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: verifies that GetByState() returns a task with a state Pending.  <br /></td></tr>
 <tr class="memitem:aa6c7ed12eb9f07c61c6ca72c794a6298" id="r_aa6c7ed12eb9f07c61c6ca72c794a6298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6c7ed12eb9f07c61c6ca72c794a6298">GetByState_ShouldReturnEmptyList_WhenTaskIsNotFound</a> ()</td></tr>
+<tr class="memdesc:aa6c7ed12eb9f07c61c6ca72c794a6298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that GetByState() returns an empty list when task is not found.  <br /></td></tr>
 <tr class="memitem:afa73e2679754401d74f3bc39713f8610" id="r_afa73e2679754401d74f3bc39713f8610"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa73e2679754401d74f3bc39713f8610">FindTask_ShouldReturnTask_WhenTaskIsFound</a> ()</td></tr>
+<tr class="memdesc:afa73e2679754401d74f3bc39713f8610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Verifies that the FindTask() method finds and returns a task by its name.  <br /></td></tr>
 <tr class="memitem:ac80193486d8fe12dc161a1c947d56e37" id="r_ac80193486d8fe12dc161a1c947d56e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac80193486d8fe12dc161a1c947d56e37">FindTask_ShouldThrow_WhenTaskTitleIsNull</a> ()</td></tr>
+<tr class="memdesc:ac80193486d8fe12dc161a1c947d56e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that the FindTask() method throws an ArgumentNullException if the task title is null.  <br /></td></tr>
 <tr class="memitem:a6bb281a3d4d941b753c5ebb7a51c8a2e" id="r_a6bb281a3d4d941b753c5ebb7a51c8a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb281a3d4d941b753c5ebb7a51c8a2e">FindTask_ShouldReturnOnlyFirstTask_WhenDuplicateTitlesExist</a> ()</td></tr>
+<tr class="memdesc:a6bb281a3d4d941b753c5ebb7a51c8a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that FindTask() returns only the first element when there are tasks with the same name in the list.  <br /></td></tr>
 <tr class="memitem:ac235be516e7b988308621a881b8561cb" id="r_ac235be516e7b988308621a881b8561cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac235be516e7b988308621a881b8561cb">FindTask_ShouldReturnNull_WhenTaskIsNotFound</a> ()</td></tr>
+<tr class="memdesc:ac235be516e7b988308621a881b8561cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that FindTask() returns null when a task is not found.  <br /></td></tr>
 <tr class="memitem:ad9b101ea9cd648fe796b0bfc7f6a2ed7" id="r_ad9b101ea9cd648fe796b0bfc7f6a2ed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9b101ea9cd648fe796b0bfc7f6a2ed7">GetCompletionRate_ShouldReturnCompletionRate</a> ()</td></tr>
+<tr class="memdesc:ad9b101ea9cd648fe796b0bfc7f6a2ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that GetCompletionRate() correctly calculates 100% completion percentage.  <br /></td></tr>
 <tr class="memitem:abb19311cba47f99fe14be36b761e5b29" id="r_abb19311cba47f99fe14be36b761e5b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb19311cba47f99fe14be36b761e5b29">GetCompletionRate_ShouldReturnZeroRate</a> ()</td></tr>
+<tr class="memdesc:abb19311cba47f99fe14be36b761e5b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage.  <br /></td></tr>
 <tr class="memitem:aaaec1f5f767be1d0ed5f0fb9f04fda49" id="r_aaaec1f5f767be1d0ed5f0fb9f04fda49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaec1f5f767be1d0ed5f0fb9f04fda49">GetCompletionRate_ShouldReturnZeroRate_WhenNoTasks</a> ()</td></tr>
+<tr class="memdesc:aaaec1f5f767be1d0ed5f0fb9f04fda49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage when list of tasks is empty.  <br /></td></tr>
 <tr class="memitem:a1c21835b2b9497ec52762c0735a4a17d" id="r_a1c21835b2b9497ec52762c0735a4a17d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c21835b2b9497ec52762c0735a4a17d">GetCompletionRate_ShouldReturnPartialRate</a> ()</td></tr>
+<tr class="memdesc:a1c21835b2b9497ec52762c0735a4a17d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that GetCompletionRate() correctly calculates 50% completion percentage.  <br /></td></tr>
 <tr class="memitem:a084f1b45f9d585d5a6bf79d269c7734e" id="r_a084f1b45f9d585d5a6bf79d269c7734e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a084f1b45f9d585d5a6bf79d269c7734e">ClearAll_ShouldRemoveAllTasks</a> ()</td></tr>
+<tr class="memdesc:a084f1b45f9d585d5a6bf79d269c7734e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test: Checks that the ClearAll() method removes all tasks from the list.  <br /></td></tr>
 <tr class="memitem:a7179211f2bbd478e29a0a1b2e102eecb" id="r_a7179211f2bbd478e29a0a1b2e102eecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7179211f2bbd478e29a0a1b2e102eecb">ClearService</a> ()</td></tr>
+<tr class="memdesc:a7179211f2bbd478e29a0a1b2e102eecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all tasks from the service after each test is completed.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A set of tests that verify TaskService functionality. </p>
@@ -216,6 +235,11 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: checks if the system allows adding tasks with a 'null' value in the description. </p>
+<p>The method confirms that the Description field can be null when creating a <a class="el" href="class_task_item.html" title="This class allows you to create a task, stores data about it (title, description) and allows you to m...">TaskItem</a> and that the service (TaskService) correctly accepts and stores such a task. </p><dl class="section see"><dt>See also</dt><dd>TaskService::AddTask(TaskItem) </dd>
+<dd>
+TaskItem::TaskItem(string, string) </dd></dl>
 
 </div>
 </div>
@@ -322,6 +346,11 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that the ClearAll() method removes all tasks from the list. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::ClearAll() </dd>
+<dd>
+TaskService::GetAllTasks() </dd></dl>
+
 </div>
 </div>
 <a id="a7179211f2bbd478e29a0a1b2e102eecb" name="a7179211f2bbd478e29a0a1b2e102eecb"></a>
@@ -346,6 +375,8 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Removes all tasks from the service after each test is completed. </p>
 
 </div>
 </div>
@@ -372,6 +403,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that FindTask() returns null when a task is not found. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::FindTask(string) </dd></dl>
+
 </div>
 </div>
 <a id="a6bb281a3d4d941b753c5ebb7a51c8a2e" name="a6bb281a3d4d941b753c5ebb7a51c8a2e"></a>
@@ -396,6 +430,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: Checks that FindTask() returns only the first element when there are tasks with the same name in the list. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::FindTask(string) </dd></dl>
 
 </div>
 </div>
@@ -422,6 +459,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Verifies that the FindTask() method finds and returns a task by its name. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::FindTask(string) </dd></dl>
+
 </div>
 </div>
 <a id="ac80193486d8fe12dc161a1c947d56e37" name="ac80193486d8fe12dc161a1c947d56e37"></a>
@@ -446,6 +486,15 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: Checks that the FindTask() method throws an ArgumentNullException if the task title is null. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>The FindTask() method is expected to throw this exception when passed null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>TaskService::FindTask(string) </dd></dl>
 
 </div>
 </div>
@@ -472,6 +521,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that GetByState() returns an empty list when task is not found. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetByState(TaskState) </dd></dl>
+
 </div>
 </div>
 <a id="abe7e4f38fba9106851960c2bc0ac8bc4" name="abe7e4f38fba9106851960c2bc0ac8bc4"></a>
@@ -496,6 +548,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: verifies that GetByState() returns a task with a state Completed. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetByState(TaskState) </dd></dl>
 
 </div>
 </div>
@@ -522,6 +577,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: verifies that GetByState() returns a task with a state InProgress. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetByState(TaskState) </dd></dl>
+
 </div>
 </div>
 <a id="a71a3309fbaefa560895a2b29622e1bfa" name="a71a3309fbaefa560895a2b29622e1bfa"></a>
@@ -546,6 +604,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: verifies that GetByState() returns a task with a state Pending. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetByState(TaskState) </dd></dl>
 
 </div>
 </div>
@@ -572,6 +633,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that GetCompletionRate() correctly calculates 100% completion percentage. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetCompletionRate() </dd></dl>
+
 </div>
 </div>
 <a id="a1c21835b2b9497ec52762c0735a4a17d" name="a1c21835b2b9497ec52762c0735a4a17d"></a>
@@ -596,6 +660,12 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: Checks that GetCompletionRate() correctly calculates 50% completion percentage. </p>
+<ul>
+<li><dl class="section see"><dt>See also</dt><dd>TaskService::GetCompletionRate() </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -622,6 +692,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetCompletionRate() </dd></dl>
+
 </div>
 </div>
 <a id="aaaec1f5f767be1d0ed5f0fb9f04fda49" name="aaaec1f5f767be1d0ed5f0fb9f04fda49"></a>
@@ -646,6 +719,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage when list of tasks is empty. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::GetCompletionRate() </dd></dl>
 
 </div>
 </div>
@@ -672,6 +748,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Checks that RemoveTask() only removes the first task found, if there are duplicate names. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::RemoveTask(string) </dd></dl>
+
 </div>
 </div>
 <a id="afa137f087620bb3cdb81bddb075dd638" name="afa137f087620bb3cdb81bddb075dd638"></a>
@@ -696,6 +775,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: verifies successful removal of an existing task from the list. </p>
+<p>The method verifies that the RemoveTask() function correctly removes a task by its name, reducing the total number of tasks in the list and returning true. </p><dl class="section see"><dt>See also</dt><dd>TaskService::RemoveTask(string) </dd></dl>
 
 </div>
 </div>
@@ -722,6 +804,9 @@ TaskItem::TaskItem(string, string) </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p>Test: Verifies that RemoveTask() returns false when a task is not found. </p>
+<dl class="section see"><dt>See also</dt><dd>TaskService::RemoveTask(string) </dd></dl>
+
 </div>
 </div>
 <a id="a306dacf7711833fa8e495ad47cbe61e4" name="a306dacf7711833fa8e495ad47cbe61e4"></a>
@@ -746,6 +831,15 @@ TaskItem::TaskItem(string, string) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test: Checks that the RemoveTask() method throws an ArgumentNullException if the task title is null. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>The RemoveTask() method is expected to throw this exception when passed null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>TaskService::RemoveTask(string) </dd></dl>
 
 </div>
 </div>

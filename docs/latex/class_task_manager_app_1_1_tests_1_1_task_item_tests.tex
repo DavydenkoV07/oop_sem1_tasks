@@ -9,25 +9,25 @@ This class includes tests that verify \doxylink{class_task_item}{Task\+Item} fun
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a544f18dd7be93d0ed30ad834f6933e32}{Setup}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the test \doxylink{class_task_item}{Task\+Item} object before each test. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_ae3f579ed364e2ad2d91527029cadd89d}{Task\+Item\+\_\+\+Should\+Initialize\+Title\+And\+Description}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor correctly initializes the Title and Description properties. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_af9341147b82ef1a365ce8cc5cd5cbee1}{Task\+Item\+\_\+\+Should\+Not\+Initialize\+Task\+\_\+\+When\+Title\+Is\+Null}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor throws an Argument\+Exception when the Title field is null. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a882d16d7d776e559ea9ad3afec61b4b7}{Task\+Item\+\_\+\+Should\+Allow\+Initialization\+\_\+\+When\+Description\+Is\+Empty}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor allows initialization with an empty description. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a7ee0dfd88ef2e2fec654be4b4fdf48d7}{Task\+Item\+\_\+\+Should\+Allow\+Initialization\+\_\+\+When\+Description\+Is\+Null}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor allows initialization with a null description. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a6cd838cc862e3f45a825efe4c8fc6e5b}{Task\+Item\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Initialized}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor sets the initial task state to Pending. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a1fccd7843e8300fe98050c435f5047e5}{Mark\+Completed\+\_\+\+Should\+Set\+State\+To\+Completed}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the Mark\+Completed() method sets the task state to Completed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a4913b137a41ea98013b38c452e09aa00}{Start\+\_\+\+Should\+Set\+State\+To\+In\+Progress}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the Start() method sets the task state to In\+Progress. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a908f418715c30af653fd30ef78dd6c6d}{Reset\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Task\+Was\+Completed}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the Reset() method sets the task state to Pending from Completed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_item_tests_ab165398ec395bc8d27beb3856671fc6d}{Reset\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Task\+Was\+In\+Progress}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Test\+: Checks that the Reset() method sets the task state to Pending from In\+Progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -42,23 +42,48 @@ This class includes tests that verify \doxylink{class_task_item}{Task\+Item} fun
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a1fccd7843e8300fe98050c435f5047e5} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Mark\+Completed\+\_\+\+Should\+Set\+State\+To\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the Mark\+Completed() method sets the task state to Completed. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Mark\+Completed() 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a908f418715c30af653fd30ef78dd6c6d}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted@{Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted}}
 \index{Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted@{Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted()}{Reset\_ShouldSetStateToPending\_WhenTaskWasCompleted()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a908f418715c30af653fd30ef78dd6c6d} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Reset\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Task\+Was\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the Reset() method sets the task state to Pending from Completed. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Reset() 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_ab165398ec395bc8d27beb3856671fc6d}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress@{Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress}}
 \index{Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress@{Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress()}{Reset\_ShouldSetStateToPending\_WhenTaskWasInProgress()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_ab165398ec395bc8d27beb3856671fc6d} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Reset\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Task\+Was\+In\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the Reset() method sets the task state to Pending from In\+Progress. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Reset() 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a544f18dd7be93d0ed30ad834f6933e32}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!Setup@{Setup}}
 \index{Setup@{Setup}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a544f18dd7be93d0ed30ad834f6933e32} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the test \doxylink{class_task_item}{Task\+Item} object before each test. 
 
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a4913b137a41ea98013b38c452e09aa00}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!Start\_ShouldSetStateToInProgress@{Start\_ShouldSetStateToInProgress}}
 \index{Start\_ShouldSetStateToInProgress@{Start\_ShouldSetStateToInProgress}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
@@ -66,36 +91,87 @@ void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Setup (\begin{Dox
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a4913b137a41ea98013b38c452e09aa00} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Start\+\_\+\+Should\+Set\+State\+To\+In\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the Start() method sets the task state to In\+Progress. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Start() 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a882d16d7d776e559ea9ad3afec61b4b7}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty@{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty}}
 \index{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty@{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty()}{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsEmpty()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a882d16d7d776e559ea9ad3afec61b4b7} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Task\+Item\+\_\+\+Should\+Allow\+Initialization\+\_\+\+When\+Description\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor allows initialization with an empty description. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Task\+Item(string, string) 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a7ee0dfd88ef2e2fec654be4b4fdf48d7}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull@{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull}}
 \index{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull@{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull()}{TaskItem\_ShouldAllowInitialization\_WhenDescriptionIsNull()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a7ee0dfd88ef2e2fec654be4b4fdf48d7} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Task\+Item\+\_\+\+Should\+Allow\+Initialization\+\_\+\+When\+Description\+Is\+Null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor allows initialization with a null description. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Task\+Item(string, string) 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_ae3f579ed364e2ad2d91527029cadd89d}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!TaskItem\_ShouldInitializeTitleAndDescription@{TaskItem\_ShouldInitializeTitleAndDescription}}
 \index{TaskItem\_ShouldInitializeTitleAndDescription@{TaskItem\_ShouldInitializeTitleAndDescription}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{TaskItem\_ShouldInitializeTitleAndDescription()}{TaskItem\_ShouldInitializeTitleAndDescription()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_ae3f579ed364e2ad2d91527029cadd89d} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Task\+Item\+\_\+\+Should\+Initialize\+Title\+And\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor correctly initializes the Title and Description properties. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a544f18dd7be93d0ed30ad834f6933e32}{Setup()} 
+
+Task\+Item\+::\+Task\+Item(string, string) 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_af9341147b82ef1a365ce8cc5cd5cbee1}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull@{TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull}}
 \index{TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull@{TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull()}{TaskItem\_ShouldNotInitializeTask\_WhenTitleIsNull()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_af9341147b82ef1a365ce8cc5cd5cbee1} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Task\+Item\+\_\+\+Should\+Not\+Initialize\+Task\+\_\+\+When\+Title\+Is\+Null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor throws an Argument\+Exception when the Title field is null. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & The constructor is expected to throw this exception when passed null. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Task\+Item(string, string) 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_item_tests_a6cd838cc862e3f45a825efe4c8fc6e5b}\index{TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}!TaskItem\_ShouldSetStateToPending\_WhenInitialized@{TaskItem\_ShouldSetStateToPending\_WhenInitialized}}
 \index{TaskItem\_ShouldSetStateToPending\_WhenInitialized@{TaskItem\_ShouldSetStateToPending\_WhenInitialized}!TaskManagerApp::Tests::TaskItemTests@{TaskManagerApp::Tests::TaskItemTests}}
 \doxysubsubsection{\texorpdfstring{TaskItem\_ShouldSetStateToPending\_WhenInitialized()}{TaskItem\_ShouldSetStateToPending\_WhenInitialized()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_item_tests_a6cd838cc862e3f45a825efe4c8fc6e5b} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Item\+Tests\+::\+Task\+Item\+\_\+\+Should\+Set\+State\+To\+Pending\+\_\+\+When\+Initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test\+: Checks that the \doxylink{class_task_item}{Task\+Item} constructor sets the initial task state to Pending. 
+
+\begin{DoxySeeAlso}{See also}
+Task\+Item\+::\+Task\+Item(string, string) 
+
+\doxylink{class_task_manager_app_1_1_tests_1_1_task_item_tests_a544f18dd7be93d0ed30ad834f6933e32}{Setup()} 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
