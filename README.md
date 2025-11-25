@@ -22,3 +22,5 @@ Laboratory work was performed by Davydenko Victoria, a student of the IPS21 grou
 Unit tests are implemented using NUnit
 
 ## Documentation 
+
+Doxygen have been used to create documentation for TaskItem, TaskItemTests, TaskService and TaskServicesTests. 
