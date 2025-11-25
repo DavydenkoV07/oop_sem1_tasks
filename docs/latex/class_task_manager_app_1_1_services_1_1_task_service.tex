@@ -2,34 +2,32 @@
 \hypertarget{class_task_manager_app_1_1_services_1_1_task_service}{}\label{class_task_manager_app_1_1_services_1_1_task_service}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 
 
-Клас для управління списком завдань (\doxylink{class_task_item}{Task\+Item})  
+This class creates list of tasks, stores them and allows to manage them.  
 
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a65e6fcb9722b2fb107723d4f82e54d43}{Task\+Service}} ()
-\begin{DoxyCompactList}\small\item\em Initializes list of tasks . \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initializes list of tasks. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a3d3a31e524333a2c09bed81243af451e}{Add\+Task}} (\mbox{\hyperlink{class_task_item}{Task\+Item}} task)
 \begin{DoxyCompactList}\small\item\em This method adds new task to the list. \end{DoxyCompactList}\item 
 IEnumerable$<$ \mbox{\hyperlink{class_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a1692c1a10182947878ee9134f106bea1}{Get\+All\+Tasks}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a complete list of all current tasks. \end{DoxyCompactList}\item 
 IEnumerable$<$ \mbox{\hyperlink{class_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a134b384f1d2f6f935d7ce6ecd025a221}{Get\+By\+State}} (Task\+State state)
-\begin{DoxyCompactList}\small\item\em Отримати завдання за певним станом (Pending, In\+Progress, Completed) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of tasks with a specified state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_ab812245c87cf6a1f8fd18e1393879311}{Remove\+Task}} (string title)
 \begin{DoxyCompactList}\small\item\em This method removes task from list. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_task_item}{Task\+Item}} \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_ac4ef04ff339fa177cc4f3f470a61f962}{Find\+Task}} (string title)
-\begin{DoxyCompactList}\small\item\em Знайти завдання за назвою \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Finds the first task with the specified name. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a90f6e47b8a63eadb179d69c1cfed92d8}{Get\+Completion\+Rate}} ()
-\begin{DoxyCompactList}\small\item\em Отримати відсоток виконаних завдань \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calculates the percentage of tasks completed in the list. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_aef234725fd7dc4ec26425dc463ed22ed}{Clear\+All}} ()
-\begin{DoxyCompactList}\small\item\em Очистити всі завдання \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deletes all tasks from the internal list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Клас для управління списком завдань (\doxylink{class_task_item}{Task\+Item}) 
-
-This class creates list of tasks, stores them and allows to manage them. @ 
+This class creates list of tasks, stores them and allows to manage them. 
 
 \label{doc-constructors}
 \Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_doc-constructors}
@@ -42,7 +40,7 @@ Task\+Manager\+App\+::\+Services\+::\+Task\+Service\+::\+Task\+Service (\begin{D
 
 
 
-Initializes list of tasks . 
+Initializes list of tasks. 
 
 
 
@@ -77,9 +75,9 @@ void Task\+Manager\+App\+::\+Services\+::\+Task\+Service\+::\+Clear\+All (\begin
 
 
 
-Очистити всі завдання 
+Deletes all tasks from the internal list. 
 
-\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_ac4ef04ff339fa177cc4f3f470a61f962}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!FindTask@{FindTask}}
+After executing this method, the \+\_\+tasks list will be empty. \Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_ac4ef04ff339fa177cc4f3f470a61f962}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!FindTask@{FindTask}}
 \index{FindTask@{FindTask}!TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 \doxysubsubsection{\texorpdfstring{FindTask()}{FindTask()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_ac4ef04ff339fa177cc4f3f470a61f962} 
@@ -87,15 +85,38 @@ void Task\+Manager\+App\+::\+Services\+::\+Task\+Service\+::\+Clear\+All (\begin
 
 
 
-Знайти завдання за назвою 
+Finds the first task with the specified name. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The name of the task to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_task_item}{Task\+Item} if the task is found, otherwise returns null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown if task title is null. \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a1692c1a10182947878ee9134f106bea1}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!GetAllTasks@{GetAllTasks}}
 \index{GetAllTasks@{GetAllTasks}!TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 \doxysubsubsection{\texorpdfstring{GetAllTasks()}{GetAllTasks()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a1692c1a10182947878ee9134f106bea1} 
 IEnumerable$<$ \mbox{\hyperlink{class_task_item}{Task\+Item}} $>$ Task\+Manager\+App\+::\+Services\+::\+Task\+Service\+::\+Get\+All\+Tasks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a134b384f1d2f6f935d7ce6ecd025a221}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!GetByState@{GetByState}}
+
+
+Returns a complete list of all current tasks. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+IEnumerable$<$\+Task\+Item$>$ collection containing all tasks currently stored in the service. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a134b384f1d2f6f935d7ce6ecd025a221}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!GetByState@{GetByState}}
 \index{GetByState@{GetByState}!TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 \doxysubsubsection{\texorpdfstring{GetByState()}{GetByState()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a134b384f1d2f6f935d7ce6ecd025a221} 
@@ -103,9 +124,21 @@ IEnumerable$<$ \mbox{\hyperlink{class_task_item}{Task\+Item}} $>$ Task\+Manager\
 
 
 
-Отримати завдання за певним станом (Pending, In\+Progress, Completed) 
+Returns a list of tasks with a specified state. 
 
-\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a90f6e47b8a63eadb179d69c1cfed92d8}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!GetCompletionRate@{GetCompletionRate}}
+
+\begin{DoxyItemize}
+\item This method filters the internal list of tasks (\+\_\+tasks) and returns only those items that match the specified state.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em state} & Task State (Task\+State\+: Pending, In\+Progress or Completed) on which to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IEnumerable$<$\+Task\+Item$>$ collection containing tasks that have the specified state. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a90f6e47b8a63eadb179d69c1cfed92d8}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!GetCompletionRate@{GetCompletionRate}}
 \index{GetCompletionRate@{GetCompletionRate}!TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 \doxysubsubsection{\texorpdfstring{GetCompletionRate()}{GetCompletionRate()}}
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a90f6e47b8a63eadb179d69c1cfed92d8} 
@@ -113,8 +146,11 @@ double Task\+Manager\+App\+::\+Services\+::\+Task\+Service\+::\+Get\+Completion\
 
 
 
-Отримати відсоток виконаних завдань 
+Calculates the percentage of tasks completed in the list. 
 
+The method counts the number of tasks in the Task\+State.\+Completed state and divides it by the total number of tasks. \begin{DoxyReturn}{Returns}
+Percentage of tasks completed as a decimal (from 0.\+0 to 1.\+0). Returns 0.\+0 if the overall task list is empty. 
+\end{DoxyReturn}
 \Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_ab812245c87cf6a1f8fd18e1393879311}\index{TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}!RemoveTask@{RemoveTask}}
 \index{RemoveTask@{RemoveTask}!TaskManagerApp::Services::TaskService@{TaskManagerApp::Services::TaskService}}
 \doxysubsubsection{\texorpdfstring{RemoveTask()}{RemoveTask()}}

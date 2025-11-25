@@ -1,6 +1,8 @@
 /**
 * @file TaskItem.cs
-* @brief 
+* @brief Contains the TaskItem model class and the associated TaskState list.
+* * This file defines the data structure used to represent
+* an individual task in the system.
 */
 
 namespace TaskManagerApp.Models
@@ -26,6 +28,7 @@ namespace TaskManagerApp.Models
     * and allows you to manage the task by changing its state.
     * @property Title Task name. Cannot be empty or null. 
     * @property Description Task description. Can be empty or null.
+    * @property State State of task completion. Set to Pending automatically.
     */
     public class TaskItem
     {

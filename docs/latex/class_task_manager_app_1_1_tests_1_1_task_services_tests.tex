@@ -15,9 +15,9 @@ void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_a
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_a3fbd1e9681992087f21adb8f8a557a07}{Add\+Task\+\_\+\+Should\+Throw\+\_\+\+When\+Task\+Is\+Null}} ()
 \begin{DoxyCompactList}\small\item\em Checks if Add\+Task throws an exception when \doxylink{class_task_item}{Task\+Item} is null. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_abef373d466eb6c844f9fc3d390d34494}{Add\+Task\+\_\+\+Should\+Throw\+\_\+\+When\+Empty\+Title}} ()
-\begin{DoxyCompactList}\small\item\em Checks if Add\+Task throws an exception when \doxylink{class_task_item}{Task\+Item} title is empty string. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Test checks if Add\+Task throws an exception when \doxylink{class_task_item}{Task\+Item} title is empty string. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_a7f1ed8b438da38a1f9d0fe9035699a89}{Add\+Task\+\_\+\+Should\+Allow\+To\+Add\+\_\+\+When\+Empty\+Description}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Test Checks whether the system allows adding a task with an empty description. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_a7556325d81b19b834f1cb4167d4632a5}{Add\+Task\+\_\+\+Should\+Allow\+To\+Add\+\_\+\+When\+Null\+Description}} ()
 \item 
 void \mbox{\hyperlink{class_task_manager_app_1_1_tests_1_1_task_services_tests_afa137f087620bb3cdb81bddb075dd638}{Remove\+Task\+\_\+\+Should\+Remove\+Task\+From\+List\+And\+Return\+True\+\_\+\+When\+Task\+Is\+Found}} ()
@@ -75,7 +75,12 @@ void Task\+Manager\+App\+::\+Tests\+::\+Task\+Services\+Tests\+::\+Add\+Task\+\_
 Test checks if a new \doxylink{class_task_item}{Task\+Item} is added to the service. 
 
 \begin{DoxyRefDesc}{Test}
-\item[\mbox{\hyperlink{test__test000001}{Test}}]\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{test__test000001}{Test}}]Test scenario\+:
+\begin{DoxyEnumerate}
+\item A new \doxylink{class_task_item}{Task\+Item} object is created.
+\item The Add\+Task method is called.
+\item It is checked that the number of items in the list is 1 and that the task name matches.
+\end{DoxyEnumerate}\end{DoxyRefDesc}
 
 
 \begin{DoxySeeAlso}{See also}
@@ -87,6 +92,15 @@ Task\+Service.\+Add\+Task(\+Task\+Item)
 {\footnotesize\ttfamily \label{class_task_manager_app_1_1_tests_1_1_task_services_tests_a7f1ed8b438da38a1f9d0fe9035699a89} 
 void Task\+Manager\+App\+::\+Tests\+::\+Task\+Services\+Tests\+::\+Add\+Task\+\_\+\+Should\+Allow\+To\+Add\+\_\+\+When\+Empty\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Test Checks whether the system allows adding a task with an empty description. 
+
+Method confirms that the Description field can be an empty string when creating a \doxylink{class_task_item}{Task\+Item} and that the service (Task\+Service) correctly accepts and stores such a task. \begin{DoxySeeAlso}{See also}
+Task\+Service\+::\+Add\+Task(\+Task\+Item) 
+
+Task\+Item\+::\+Task\+Item(string, string) 
+\end{DoxySeeAlso}
 \Hypertarget{class_task_manager_app_1_1_tests_1_1_task_services_tests_a7556325d81b19b834f1cb4167d4632a5}\index{TaskManagerApp::Tests::TaskServicesTests@{TaskManagerApp::Tests::TaskServicesTests}!AddTask\_ShouldAllowToAdd\_WhenNullDescription@{AddTask\_ShouldAllowToAdd\_WhenNullDescription}}
 \index{AddTask\_ShouldAllowToAdd\_WhenNullDescription@{AddTask\_ShouldAllowToAdd\_WhenNullDescription}!TaskManagerApp::Tests::TaskServicesTests@{TaskManagerApp::Tests::TaskServicesTests}}
 \doxysubsubsection{\texorpdfstring{AddTask\_ShouldAllowToAdd\_WhenNullDescription()}{AddTask\_ShouldAllowToAdd\_WhenNullDescription()}}
@@ -101,7 +115,7 @@ void Task\+Manager\+App\+::\+Tests\+::\+Task\+Services\+Tests\+::\+Add\+Task\+\_
 
 
 
-Checks if Add\+Task throws an exception when \doxylink{class_task_item}{Task\+Item} title is empty string. 
+Test checks if Add\+Task throws an exception when \doxylink{class_task_item}{Task\+Item} title is empty string. 
 
 \begin{DoxyRefDesc}{Test}
 \item[\mbox{\hyperlink{test__test000003}{Test}}]Steps\+:

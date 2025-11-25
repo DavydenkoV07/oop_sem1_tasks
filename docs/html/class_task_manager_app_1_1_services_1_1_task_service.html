@@ -92,30 +92,30 @@ $(function(){initNavTree('class_task_manager_app_1_1_services_1_1_task_service.h
 </div><!--header-->
 <div class="contents">
 
-<p>Клас для управління списком завдань (<a class="el" href="class_task_item.html" title="Модель завдання для менеджера задач">TaskItem</a>)  
+<p>This class creates list of tasks, stores them and allows to manage them.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65e6fcb9722b2fb107723d4f82e54d43" id="r_a65e6fcb9722b2fb107723d4f82e54d43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65e6fcb9722b2fb107723d4f82e54d43">TaskService</a> ()</td></tr>
-<tr class="memdesc:a65e6fcb9722b2fb107723d4f82e54d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes list of tasks .  <br /></td></tr>
+<tr class="memdesc:a65e6fcb9722b2fb107723d4f82e54d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes list of tasks.  <br /></td></tr>
 <tr class="memitem:a3d3a31e524333a2c09bed81243af451e" id="r_a3d3a31e524333a2c09bed81243af451e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d3a31e524333a2c09bed81243af451e">AddTask</a> (<a class="el" href="class_task_item.html">TaskItem</a> task)</td></tr>
 <tr class="memdesc:a3d3a31e524333a2c09bed81243af451e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method adds new task to the list.  <br /></td></tr>
 <tr class="memitem:a1692c1a10182947878ee9134f106bea1" id="r_a1692c1a10182947878ee9134f106bea1"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_task_item.html">TaskItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1692c1a10182947878ee9134f106bea1">GetAllTasks</a> ()</td></tr>
+<tr class="memdesc:a1692c1a10182947878ee9134f106bea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a complete list of all current tasks.  <br /></td></tr>
 <tr class="memitem:a134b384f1d2f6f935d7ce6ecd025a221" id="r_a134b384f1d2f6f935d7ce6ecd025a221"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_task_item.html">TaskItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a134b384f1d2f6f935d7ce6ecd025a221">GetByState</a> (TaskState state)</td></tr>
-<tr class="memdesc:a134b384f1d2f6f935d7ce6ecd025a221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отримати завдання за певним станом (Pending, InProgress, Completed)  <br /></td></tr>
+<tr class="memdesc:a134b384f1d2f6f935d7ce6ecd025a221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of tasks with a specified state.  <br /></td></tr>
 <tr class="memitem:ab812245c87cf6a1f8fd18e1393879311" id="r_ab812245c87cf6a1f8fd18e1393879311"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab812245c87cf6a1f8fd18e1393879311">RemoveTask</a> (string title)</td></tr>
 <tr class="memdesc:ab812245c87cf6a1f8fd18e1393879311"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method removes task from list.  <br /></td></tr>
 <tr class="memitem:ac4ef04ff339fa177cc4f3f470a61f962" id="r_ac4ef04ff339fa177cc4f3f470a61f962"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task_item.html">TaskItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4ef04ff339fa177cc4f3f470a61f962">FindTask</a> (string title)</td></tr>
-<tr class="memdesc:ac4ef04ff339fa177cc4f3f470a61f962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Знайти завдання за назвою  <br /></td></tr>
+<tr class="memdesc:ac4ef04ff339fa177cc4f3f470a61f962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first task with the specified name.  <br /></td></tr>
 <tr class="memitem:a90f6e47b8a63eadb179d69c1cfed92d8" id="r_a90f6e47b8a63eadb179d69c1cfed92d8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90f6e47b8a63eadb179d69c1cfed92d8">GetCompletionRate</a> ()</td></tr>
-<tr class="memdesc:a90f6e47b8a63eadb179d69c1cfed92d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отримати відсоток виконаних завдань  <br /></td></tr>
+<tr class="memdesc:a90f6e47b8a63eadb179d69c1cfed92d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the percentage of tasks completed in the list.  <br /></td></tr>
 <tr class="memitem:aef234725fd7dc4ec26425dc463ed22ed" id="r_aef234725fd7dc4ec26425dc463ed22ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef234725fd7dc4ec26425dc463ed22ed">ClearAll</a> ()</td></tr>
-<tr class="memdesc:aef234725fd7dc4ec26425dc463ed22ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистити всі завдання  <br /></td></tr>
+<tr class="memdesc:aef234725fd7dc4ec26425dc463ed22ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all tasks from the internal list.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Клас для управління списком завдань (<a class="el" href="class_task_item.html" title="Модель завдання для менеджера задач">TaskItem</a>) </p>
-<p>This class creates list of tasks, stores them and allows to manage them. @ </p>
+<div class="textblock"><p>This class creates list of tasks, stores them and allows to manage them. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a65e6fcb9722b2fb107723d4f82e54d43" name="a65e6fcb9722b2fb107723d4f82e54d43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65e6fcb9722b2fb107723d4f82e54d43">&#9670;&#160;</a></span>TaskService()</h2>
@@ -140,7 +140,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes list of tasks . </p>
+<p>Initializes list of tasks. </p>
 
 </div>
 </div>
@@ -207,7 +207,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Очистити всі завдання </p>
+<p>Deletes all tasks from the internal list. </p>
+<p>After executing this method, the _tasks list will be empty. </p>
 
 </div>
 </div>
@@ -234,7 +235,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Знайти завдання за назвою </p>
+<p>Finds the first task with the specified name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>The name of the task to be found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_task_item.html" title="This class allows you to create a task, stores data about it (title, description) and allows you to m...">TaskItem</a> if the task is found, otherwise returns null. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if task title is null. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -252,6 +266,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a complete list of all current tasks. </p>
+<ul>
+<li><dl class="section return"><dt>Returns</dt><dd>IEnumerable&lt;TaskItem&gt; collection containing all tasks currently stored in the service. </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -278,7 +298,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Отримати завдання за певним станом (Pending, InProgress, Completed) </p>
+<p>Returns a list of tasks with a specified state. </p>
+<ul>
+<li>This method filters the internal list of tasks (_tasks) and returns only those items that match the specified state.</li>
+<li><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Task State (TaskState: Pending, InProgress or Completed) on which to filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IEnumerable&lt;TaskItem&gt; collection containing tasks that have the specified state. </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -305,7 +336,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Отримати відсоток виконаних завдань </p>
+<p>Calculates the percentage of tasks completed in the list. </p>
+<p>The method counts the number of tasks in the TaskState.Completed state and divides it by the total number of tasks. </p><dl class="section return"><dt>Returns</dt><dd>Percentage of tasks completed as a decimal (from 0.0 to 1.0). Returns 0.0 if the overall task list is empty. </dd></dl>
 
 </div>
 </div>

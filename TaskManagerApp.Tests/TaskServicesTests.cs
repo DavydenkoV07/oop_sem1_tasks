@@ -33,7 +33,11 @@ namespace TaskManagerApp.Tests
         [Test]
         /**
         * @brief Test checks if a new TaskItem is added to the service
-        * @test 
+        * @test Test scenario:
+        * 1. A new TaskItem object is created.
+        * 2. The AddTask method is called.
+        * 3. It is checked that the number of items in the list is 1
+        * and that the task name matches.
         *      
         * @see TaskService.AddTask(TaskItem)
         */
@@ -67,7 +71,7 @@ namespace TaskManagerApp.Tests
 
         [Test]
         /**
-        * @brief Checks if AddTask throws an exception when TaskItem title is empty string
+        * @brief Test checks if AddTask throws an exception when TaskItem title is empty string
         * @test Steps:
         * - Initialize new TaskItem with empty title
         * - Call AddTask  
@@ -80,8 +84,14 @@ namespace TaskManagerApp.Tests
             Assert.Throws<ArgumentException>(() => service.AddTask(new TaskItem("", "Test Description")));
         }
         
+        /**
+        * @brief Test Checks whether the system allows adding a task with an empty description.
+        * @details Method confirms that the Description field can be an empty string
+        * when creating a TaskItem and that the service (TaskService) correctly accepts and stores such a task.
+        * @see TaskService::AddTask(TaskItem)
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
-
         public void AddTask_ShouldAllowToAdd_WhenEmptyDescription()
         {
             // Arrange
@@ -93,7 +103,13 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.Count(), Is.EqualTo(1));
             Assert.That(tasks.First().Description, Is.Empty);
         }
-        
+        /**
+        * @brief Test: checks if the system allows adding tasks with a 'null' value in the description.
+        * @details The method confirms that the Description field can be null
+        * when creating a TaskItem and that the service (TaskService) correctly accepts and stores such a task.
+        * @see TaskService::AddTask(TaskItem)
+        * @see TaskItem::TaskItem(string, string)
+        */
         [Test]
         public void AddTask_ShouldAllowToAdd_WhenNullDescription()
         {
@@ -107,6 +123,12 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.First().Description, Is.Null);
         }
 
+        /**
+        * @brief Test: verifies successful removal of an existing task from the list.
+        * @details The method verifies that the RemoveTask() function correctly removes a task
+        * by its name, reducing the total number of tasks in the list and returning true.
+        * @see TaskService::RemoveTask(string)
+        */
         [Test]
         public void RemoveTask_ShouldRemoveTaskFromListAndReturnTrue_WhenTaskIsFound()
         {
@@ -121,12 +143,23 @@ namespace TaskManagerApp.Tests
             Assert.That(isTaskRemoved, Is.True);
         }
 
+        /**
+        * @brief Test: Checks that the RemoveTask() method throws an ArgumentNullException
+        * if the task title is null.
+        * @throws ArgumentNullException The RemoveTask() method is expected to throw this exception when passed null.
+        * @see TaskService::RemoveTask(string)
+        */
         [Test]
         public void RemoveTask_ShouldThrow_WhenTaskTitleIsNull()
         {
             Assert.Throws<ArgumentNullException>(() => service.RemoveTask(null));
         }
 
+        /**
+        * @brief Test: Checks that RemoveTask() only removes the first task found,
+        * if there are duplicate names.
+        * @see TaskService::RemoveTask(string)
+        */
         [Test]
         public void RemoveTask_ShouldRemoveOnlyFirstMatchingTask_WhenDuplicatesExist()
         {
@@ -142,7 +175,10 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.Count(), Is.EqualTo(1));
             Assert.That(isTaskRemoved, Is.True);
         }
-
+        /**
+        * @brief Test: Verifies that RemoveTask() returns false when a task is not found.
+        * @see TaskService::RemoveTask(string)
+        */
         [Test]
         public void RemoveTask_ShouldReturnFalse_WhenTaskIsNotFound()
         {
@@ -157,6 +193,10 @@ namespace TaskManagerApp.Tests
             Assert.That(isTaskRemoved, Is.False);
         }
 
+        /**
+        * @brief Test: verifies that GetByState() returns a task with a state InProgress.
+        * @see TaskService::GetByState(TaskState)
+        */
         [Test]
         public void GetByState_ShouldReturnTaskInProgress_WhenTaskIsFound()
         {
@@ -172,6 +212,10 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
         }
 
+        /**
+        * @brief Test: verifies that GetByState() returns a task with a state Completed.
+        * @see TaskService::GetByState(TaskState)
+        */
         [Test]
         public void GetByState_ShouldReturnTaskCompleted_WhenTaskIsFound()
         {
@@ -187,6 +231,10 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
         }
 
+        /**
+        * @brief Test: verifies that GetByState() returns a task with a state Pending.
+        * @see TaskService::GetByState(TaskState)
+        */
         [Test]
         public void GetByState_ShouldReturnTaskPending_WhenTaskIsFound()
         {
@@ -201,6 +249,10 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks.First().Title, Is.EqualTo("Test Title"));
         }
 
+        /**
+        * @brief Test: Checks that GetByState() returns an empty list when task is not found.
+        * @see TaskService::GetByState(TaskState)
+        */
         [Test]
         public void GetByState_ShouldReturnEmptyList_WhenTaskIsNotFound()
         {
@@ -213,7 +265,10 @@ namespace TaskManagerApp.Tests
             Assert.That(tasks, Is.Empty);
         }
 
-    
+        /**
+        * @brief Test: Verifies that the FindTask() method finds and returns a task by its name.
+        * @see TaskService::FindTask(string)
+        */
         [Test]
         public void FindTask_ShouldReturnTask_WhenTaskIsFound()
         {
@@ -227,12 +282,21 @@ namespace TaskManagerApp.Tests
             Assert.That(taskByTitle.Title, Is.EqualTo("Test Title"));
         }
 
+        /**
+        * @brief Test: Checks that the FindTask() method throws an ArgumentNullException if the task title is null.
+        * @throws ArgumentNullException The FindTask() method is expected to throw this exception when passed null.
+        * @see TaskService::FindTask(string)
+        */
         [Test]
         public void FindTask_ShouldThrow_WhenTaskTitleIsNull()
         {
             Assert.Throws<ArgumentNullException>(() => service.FindTask(null));
         }
 
+        /**
+        * @brief Test: Checks that FindTask() returns only the first element when there are tasks with the same name in the list.
+        * @see TaskService::FindTask(string)
+        */
         [Test]
         public void FindTask_ShouldReturnOnlyFirstTask_WhenDuplicateTitlesExist()
         {
@@ -249,6 +313,10 @@ namespace TaskManagerApp.Tests
             Assert.That(taskByTitle.Description, Is.EqualTo("Test Description 1"));
         }
 
+        /**
+        * @brief Test: Checks that FindTask() returns null when a task is not found.
+        * @see TaskService::FindTask(string)
+        */
         [Test]
         public void FindTask_ShouldReturnNull_WhenTaskIsNotFound()
         {
@@ -262,6 +330,10 @@ namespace TaskManagerApp.Tests
 
         }
 
+        /**
+        * @brief Test: Checks that GetCompletionRate() correctly calculates 100% completion percentage.
+        * @see TaskService::GetCompletionRate()
+        */
         [Test]
         public void GetCompletionRate_ShouldReturnCompletionRate()
         {
@@ -275,6 +347,10 @@ namespace TaskManagerApp.Tests
             Assert.That(completionRate, Is.EqualTo(1).Within(0.001));
         }
 
+        /**
+        * @brief Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage.
+        * @see TaskService::GetCompletionRate()
+        */
         [Test]
         public void GetCompletionRate_ShouldReturnZeroRate()
         {
@@ -287,6 +363,10 @@ namespace TaskManagerApp.Tests
             Assert.That(completionRate, Is.EqualTo(0).Within(0.001));
         }
 
+        /**
+        * @brief Test: Checks that GetCompletionRate() correctly calculates 0% completion percentage when list of tasks is empty.
+        * @see TaskService::GetCompletionRate()
+        */
         [Test]
         public void GetCompletionRate_ShouldReturnZeroRate_WhenNoTasks()
         {
@@ -298,6 +378,10 @@ namespace TaskManagerApp.Tests
             Assert.That(completionRate, Is.EqualTo(0).Within(0.001));
         }
 
+        /**
+        * @brief Test: Checks that GetCompletionRate() correctly calculates 50% completion percentage.
+        * * @see TaskService::GetCompletionRate()
+        */
         [Test]
         public void GetCompletionRate_ShouldReturnPartialRate()
         {
@@ -313,7 +397,11 @@ namespace TaskManagerApp.Tests
             Assert.That(completionRate, Is.EqualTo(0.5).Within(0.001));
         }
 
-
+        /**
+        * @brief Test: Checks that the ClearAll() method removes all tasks from the list.
+        * @see TaskService::ClearAll()
+        * @see TaskService::GetAllTasks()
+        */
         [Test]
         public void ClearAll_ShouldRemoveAllTasks()
         {
@@ -326,6 +414,9 @@ namespace TaskManagerApp.Tests
             Assert.That(service.GetAllTasks(), Is.Empty);
         }
 
+        /**
+        * @brief Removes all tasks from the service after each test is completed.
+        */
         [TearDown]
         public void ClearService()
         {

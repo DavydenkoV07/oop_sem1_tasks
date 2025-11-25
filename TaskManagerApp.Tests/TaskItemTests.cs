@@ -10,11 +10,18 @@ using System;
 namespace TaskManagerApp.Tests
 {
     [TestFixture]
-    
+    /**
+    * @class TaskItemTests 
+    * @brief This class includes tests that verify TaskItem functionality.
+    * @property _task 
+    */
     public class TaskItemTests
     {
         private TaskItem _task;
 
+        /**
+        *
+        */
         [SetUp]
         public void Setup()
         {

@@ -93,10 +93,15 @@ $(function(){initNavTree('test.html','',''); });
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>Global <a class="el" href="class_task_manager_app_1_1_tests_1_1_task_services_tests.html#ace3f6309288fd291252f7343052f69d6">TaskManagerApp::Tests::TaskServicesTests::AddTask_ShouldAddNewTaskToList</a>  ()</dt>
-<dd><a class="anchor" id="_test000001"></a> </dd>
+<dd><a class="anchor" id="_test000001"></a>Test scenario:<ol type="1">
+<li>A new <a class="el" href="class_task_item.html" title="This class allows you to create a task, stores data about it (title, description) and allows you to m...">TaskItem</a> object is created.</li>
+<li>The AddTask method is called.</li>
+<li>It is checked that the number of items in the list is 1 and that the task name matches.</li>
+</ol>
+</dd>
 <dt>Global <a class="el" href="class_task_manager_app_1_1_tests_1_1_task_services_tests.html#abef373d466eb6c844f9fc3d390d34494">TaskManagerApp::Tests::TaskServicesTests::AddTask_ShouldThrow_WhenEmptyTitle</a>  ()</dt>
 <dd><a class="anchor" id="_test000003"></a>Steps:<ul>
-<li>Initialize new <a class="el" href="class_task_item.html" title="Модель завдання для менеджера задач">TaskItem</a> with empty title</li>
+<li>Initialize new <a class="el" href="class_task_item.html" title="This class allows you to create a task, stores data about it (title, description) and allows you to m...">TaskItem</a> with empty title</li>
 <li>Call AddTask <br  />
 </li>
 <li>ArgumentException is thrown </li>
