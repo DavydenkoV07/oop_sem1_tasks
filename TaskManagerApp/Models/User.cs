@@ -1,3 +1,8 @@
+/**
+* @file User.cs
+* @brief Contains the User class to represent a system user.
+* @namespace TaskManagerApp.Models
+*/
 using System;
 
 namespace TaskManagerApp.Models
@@ -8,8 +13,11 @@ namespace TaskManagerApp.Models
     */
     public class User
     {
+        /// @property UserId The unique identifier of the user, generated automatically.
         public int UserId { get; }
+        /// @property Username The user's chosen name.
         public string Username { get; set; }
+        /// @property Email The user's email address.
         public string Email { get; set; }
         private static int _nextId = 1;
 

@@ -1,3 +1,8 @@
+/**
+* @file PriorityTask.cs
+* @brief Contains the PriorityTask class, which inherits from TaskItem and adds priority functionality.
+* @namespace TaskManagerApp.Models
+*/
 using System;
 
 namespace TaskManagerApp.Models
@@ -8,6 +13,7 @@ namespace TaskManagerApp.Models
     */
     public class PriorityTask : TaskItem
     {
+        /// @property Priority The priority level of the task.
         public PriorityLevel Priority { get; set; }
 
         /**
