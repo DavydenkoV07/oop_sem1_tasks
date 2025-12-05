@@ -1,3 +1,8 @@
+/**
+* @file ReportGenerator.cs
+* @brief Contains the ReportGenerator class for generating reports using the ITaskReporter interface (dynamic polymorphism).
+* @namespace TaskManagerApp.Services
+*/
 using System;
 using System.Collections.Generic;
 using TaskManagerApp.Models;
@@ -15,6 +20,7 @@ namespace TaskManagerApp.Services
 
         /**
          * @brief Initializes the generator with a custom header.
+         * @param header The header for the report.
          */
         public ReportGenerator(string header)
         {

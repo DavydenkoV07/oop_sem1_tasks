@@ -1,3 +1,8 @@
+/**
+* @file TaskService.cs
+* @brief Contains the TaskService class, which inherits from BaseTaskService and adds business logic functionality.
+* @namespace TaskManagerApp.Services
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +16,8 @@ namespace TaskManagerApp.Services
     */
     public class TaskService : BaseTaskService
     {
+        /// @private
+        /// @var _assignedUsers Dictionary for storing assigned users (key: task Title).
         private readonly Dictionary<string, User> _assignedUsers = new Dictionary<string, User>();
         
         /**

@@ -1,3 +1,8 @@
+/**
+* @file TaskSearcher.cs
+* @brief Contains the static TaskSearcher<T> class for generic task searching (static polymorphism - Generics).
+* @namespace TaskManagerApp.Services
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
