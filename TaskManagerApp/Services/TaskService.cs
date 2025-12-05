@@ -1,62 +1,39 @@
-
-/**
-* @file TaskItem.cs
-* @brief Contains the TaskItem model class and the associated TaskState list.
-* This file defines the data structure used to represent
-* an individual task in the system.
-*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TaskManagerApp.Models;
 
 namespace TaskManagerApp.Services
 {
-    
     /**
     * @class TaskService
-    * @brief This class creates list of tasks, stores them and allows to manage them. 
-    * 
+    * @brief Manages a list of tasks, providing filtering and statistics.
     */
-    public class TaskService
+    public class TaskService : BaseTaskService
     {
-        private readonly List<TaskItem> _tasks;
+        private readonly Dictionary<string, User> _assignedUsers = new Dictionary<string, User>();
+        
+        /**
+         * @brief TaskService constructor.
+         */
+        public TaskService() { }
 
         /**
-        * @brief Initializes list of tasks
-        *  
-        */
-        public TaskService()
+         * @brief Implementation of task validation. Ensures no duplicate title.
+         * @param task Task to validate.
+         * @exception InvalidOperationException Thrown if a task with the same title already exists.
+         */
+        protected override void ValidateTask(TaskItem task)
         {
-            _tasks = new List<TaskItem>();
+            if (_tasks.Any(t => t.Title.Equals(task.Title, StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new InvalidOperationException($"A task with title '{task.Title}' already exists.");
+            }
         }
-
-        /**
-        * @brief This method adds new task to the list.
-        * @details 
-        * @param task Task that you want to add. 
-        * @exception ArgumentNullException Thrown when argument is null. 
-        */
-        public void AddTask(TaskItem task)
-        {
-            //fixed after testing
-            if (task == null)
-                throw new ArgumentNullException(nameof(task), "Task cannot be null.");
-            _tasks.Add(task);
-        }
-
-        /**
-        * @brief Returns a complete list of all current tasks.
-        * * @return IEnumerable<TaskItem> collection containing all tasks
-        * currently stored in the service.
-        */
-        public IEnumerable<TaskItem> GetAllTasks() => _tasks;
 
         /**
         * @brief Returns a list of tasks with a specified state.
-        * * This method filters the internal list of tasks (_tasks) and
-        * returns only those items that match the specified state.
-        * * @param state Task State (TaskState: Pending, InProgress or Completed)
-        * on which to filter.
+        * @param state Task State to filter by.
         * @return IEnumerable<TaskItem> collection containing tasks that have the specified state.
         */
         public IEnumerable<TaskItem> GetByState(TaskState state)
@@ -65,25 +42,25 @@ namespace TaskManagerApp.Services
         }
 
         /**
-        * @brief This method removes task from list.
-        * @details The method searches for the first task with a matching title and removes it.
-        * If the title is null, an exception is thrown. If no task is found, it returns false.
+        * @brief Removes a task from the list by title.
         * @param title Title of task that needs to be removed.
         * @exception ArgumentNullException Thrown when task title is null.
         * @return True if the task was found and successfully removed, otherwise returns false.
         */
         public bool RemoveTask(string title)
         {
-            //fixed after testing
             if (title == null)
                 throw new ArgumentNullException(nameof(title), "Title cannot be null.");
 
             var task = _tasks.FirstOrDefault(t => t.Title == title);
             if (task == null) return false;
+            
             _tasks.Remove(task);
+            if (_assignedUsers.ContainsKey(title)) _assignedUsers.Remove(title);
+            Console.WriteLine($"Task '{title}' removed.");
             return true;
         }
-        
+
         /**
         * @brief Finds the first task with the specified name.
         * @param title The name of the task to be found.
@@ -92,7 +69,6 @@ namespace TaskManagerApp.Services
         */
         public TaskItem? FindTask(string title)
         {
-             //fixed after testing
             if (title == null)
                 throw new ArgumentNullException(nameof(title), "Title cannot be null.");
 
@@ -101,25 +77,51 @@ namespace TaskManagerApp.Services
 
         /**
         * @brief Calculates the percentage of tasks completed in the list.
-        * @details The method counts the number of tasks in the TaskState.Completed state
-        * and divides it by the total number of tasks.
         * @return Percentage of tasks completed as a decimal (from 0.0 to 1.0).
-        * Returns 0.0 if the overall task list is empty.
         */
         public double GetCompletionRate()
         {
-            if (_tasks.Count == 0) return 0;
+            if (_tasks.Count == 0) return 0.0;
             double completed = _tasks.Count(t => t.State == TaskState.Completed);
             return completed / _tasks.Count;
         }
 
         /**
-        * @brief Deletes all tasks from the internal list.
-        * @details After executing this method, the _tasks list will be empty.
-        */
-        public void ClearAll()
+         * @brief Assigns a user to a task by title.
+         * @param taskTitle The title of the task.
+         * @param user The user to assign.
+         * @return True if assignment was successful, false if task was not found.
+         */
+        public bool AssignUser(string taskTitle, User user)
         {
-            _tasks.Clear();
+            if (FindTask(taskTitle) == null) return false;
+
+            _assignedUsers[taskTitle] = user;
+            Console.WriteLine($"User '{user.Username}' assigned to task '{taskTitle}'.");
+            return true;
+        }
+        
+        /**
+         * @brief Gets the assigned user for a task.
+         * @param taskTitle The title of the task.
+         * @return User object or null if no user is assigned.
+         */
+        public User? GetAssignedUser(string taskTitle)
+        {
+            if (_assignedUsers.TryGetValue(taskTitle, out User user))
+            {
+                return user;
+            }
+            return null;
+        }
+        
+        /**
+         * @brief Converts all tasks to a summary string.
+         * @return A string summary of all tasks.
+         */
+        public string GetSummary()
+        {
+            return $"Total Tasks: {_tasks.Count}. Completed: {GetByState(TaskState.Completed).Count()}. Rate: {GetCompletionRate():P2}";
         }
     }
 }
