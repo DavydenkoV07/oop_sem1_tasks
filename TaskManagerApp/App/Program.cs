@@ -1,58 +1,83 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq; // Потрібен для методу OfType<T>()
 using TaskManagerApp.Models;
 using TaskManagerApp.Services;
 
-namespace TaskManagerApp
+namespace TaskManagerApp.App
 {
-    internal class Program
+    /**
+     * @class AppManager
+     * @brief Manages the application workflow and coordinates services.
+     */
+    public class AppManager 
     {
-        static void Main(string[] args)
+        private readonly TaskService _taskService = new TaskService();
+        private readonly ReportGenerator _reportGenerator = new ReportGenerator("Daily Task Summary");
+
+        /**
+         * @brief Runs the main application demonstration logic.
+         */
+        public void RunDemo()
         {
-            Console.WriteLine("=== Task Manager App ===\n");
+            Console.WriteLine("=== Task Manager Application Demo ===");
+            
+            // 1. Створення різних типів завдань
+            var simpleTask = new TaskItem("Buy groceries", "Milk, bread, and eggs.");
+            var deadlineTask = new TimedTask("Project Alpha", "Finish main module.", DateTime.Now.AddDays(-1));
+            var highPriorityTask = new PriorityTask("Fix critical bug", "Database connection issue.", PriorityLevel.Critical);
+            
+            // 2. Додавання завдань через поліморфний інтерфейс (BaseTaskService.AddTask)
+            _taskService.AddTask(simpleTask);
+            _taskService.AddTask(deadlineTask); // Overdue task
+            _taskService.AddTask(highPriorityTask);
+            
+            // 3. Зміна стану та додаткові дії
+            simpleTask.Start(); 
+            highPriorityTask.IncreasePriority(); 
+            
+            // 4. Призначення користувача
+            var user1 = new User("Alice", "alice@example.com");
+            _taskService.AssignUser(simpleTask.Title, user1); 
 
-            // Створюємо сервіс
-            var service = new TaskService();
+            Console.WriteLine("\n--- Task State Management ---");
+            Console.WriteLine($"Is '{deadlineTask.Title}' overdue? {deadlineTask.IsOverdue()}"); 
 
-            // Додаємо кілька задач
-            service.AddTask(new TaskItem("Buy milk", "Buy 2 liters of milk"));
-            service.AddTask(new TaskItem("Do homework", "Math and physics exercises"));
-            service.AddTask(new TaskItem("Clean room", "Vacuum and dust"));
+            // 5. Демонстрація динамічного поліморфізму (через інтерфейс ITaskReporter)
+            Console.WriteLine("\n--- Dynamic Polymorphism (ITaskReporter) Report ---");
+            var tasksForReport = new List<ITaskReporter> { simpleTask, deadlineTask, highPriorityTask };
+            string report = _reportGenerator.GenerateConsolidatedReport(tasksForReport); 
+            Console.WriteLine(report);
 
-            // Почнемо виконання деяких
-            var homework = service.FindTask("Do homework");
-            homework?.Start();
-
-            var milk = service.FindTask("Buy milk");
-            milk?.MarkCompleted();
-
-            // Виведемо всі задачі
-            Console.WriteLine("All tasks:");
-            foreach (var task in service.GetAllTasks())
+            // 6. Демонстрація статичного поліморфізму (Generics)
+            Console.WriteLine("\n--- Static Polymorphism (TaskSearcher<T>) ---");
+            var allTasks = _taskService.GetAllTasks();
+            var searchResults = TaskSearcher<TaskItem>.SearchByKeyword(allTasks, "bug"); 
+            Console.WriteLine($"Found {searchResults.Count} task(s) with keyword 'bug'.");
+            
+            var timedTasks = allTasks.OfType<TimedTask>();
+            int overdueCount = TaskSearcher<TimedTask>.CountOverdue(timedTasks); 
+            Console.WriteLine($"Overdue Timed Tasks: {overdueCount}");
+            
+            // 7. Виведення загальної статистики
+            Console.WriteLine("\n--- Final Summary ---");
+            Console.WriteLine(_taskService.GetSummary()); 
+        }
+    }
+    
+    
+    public class Program 
+    {
+        public static void Main(string[] args)
+        {
+            try
             {
-                Console.WriteLine($"- {task.Title} [{task.State}]");
+                new AppManager().RunDemo();
             }
-
-            // Виведемо лише виконані
-            Console.WriteLine("\nCompleted tasks:");
-            foreach (var task in service.GetByState(TaskState.Completed))
+            catch (Exception ex)
             {
-                Console.WriteLine($"- {task.Title}");
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
-
-            // Показати рівень виконання
-            Console.WriteLine($"\nCompletion rate: {service.GetCompletionRate():P0}");
-
-            // Видалимо задачу
-            service.RemoveTask("Clean room");
-            Console.WriteLine("\nAfter removing 'Clean room':");
-            foreach (var task in service.GetAllTasks())
-            {
-                Console.WriteLine($"- {task.Title} [{task.State}]");
-            }
-
-            // Кінець
-            Console.WriteLine("\nProgram finished. Press any key to exit...");
-            Console.ReadKey();
         }
     }
 }
