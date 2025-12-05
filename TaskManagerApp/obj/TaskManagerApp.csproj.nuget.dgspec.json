@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Vika\\universiti\\IZR_lab\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj": {}
+    "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\TaskManagerApp.csproj": {}
   },
   "projects": {
-    "D:\\Vika\\universiti\\IZR_lab\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj": {
+    "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\TaskManagerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Vika\\universiti\\IZR_lab\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
+        "projectUniqueName": "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\TaskManagerApp.csproj",
         "projectName": "TaskManagerApp",
-        "projectPath": "D:\\Vika\\universiti\\IZR_lab\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
+        "projectPath": "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\TaskManagerApp.csproj",
         "packagesPath": "C:\\Users\\Vika\\.nuget\\packages\\",
-        "outputPath": "D:\\Vika\\universiti\\IZR_lab\\TaskManagerApp\\TaskManagerApp\\obj\\",
+        "outputPath": "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vika\\AppData\\Roaming\\NuGet\\NuGet.Config"
