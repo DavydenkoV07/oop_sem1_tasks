@@ -1,0 +1,91 @@
+\doxysection{Task\+Manager\+App.\+Models Namespace Reference}
+\hypertarget{namespace_task_manager_app_1_1_models}{}\label{namespace_task_manager_app_1_1_models}\index{TaskManagerApp.Models@{TaskManagerApp.Models}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter}}
+\begin{DoxyCompactList}\small\item\em Interface for objects that can generate a formatted task report. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task}{Priority\+Task}}
+\begin{DoxyCompactList}\small\item\em Represents a task with a specific priority level. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}
+\begin{DoxyCompactList}\small\item\em Base class for a task, storing core data and state management. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task}{Timed\+Task}}
+\begin{DoxyCompactList}\small\item\em Represents a task with a defined deadline. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}
+\begin{DoxyCompactList}\small\item\em Represents a system user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} \{ \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a2d13df6f8b5e4c5af9f87e0dc39df69d}{Pending}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a12d868c18cb29bf58f02b504be9033fd}{In\+Progress}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a07ca5050e697392c9ed47e6453f1453f}{Completed}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617ab0c20989fc4692ffdcb556dde07c855d}{On\+Hold}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines possible task lifecycle states. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Priority\+Level}} \{ \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a28d0edd045e05cf5af64e35ae0c4c6ef}{Low}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a87f8a6ab85c9ced3702b4ea641ad4bb5}{Medium}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a655d20c1ca69519ca647684edbb2db35}{High}}
+, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a278d01e5af56273bae1bb99a98b370cd}{Critical}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the level of priority for a task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_task_manager_app_1_1_models_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!PriorityLevel@{PriorityLevel}}
+\index{PriorityLevel@{PriorityLevel}!TaskManagerApp.Models@{TaskManagerApp.Models}}
+\doxysubsubsection{\texorpdfstring{PriorityLevel}{PriorityLevel}}
+{\footnotesize\ttfamily \label{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0} 
+enum \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Task\+Manager\+App.\+Models.\+Priority\+Level}}}
+
+
+
+Defines the level of priority for a task. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low@{Low}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!Low@{Low}}}\Hypertarget{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a28d0edd045e05cf5af64e35ae0c4c6ef}\label{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a28d0edd045e05cf5af64e35ae0c4c6ef} 
+Low&Low priority. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Medium@{Medium}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!Medium@{Medium}}}\Hypertarget{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a87f8a6ab85c9ced3702b4ea641ad4bb5}\label{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a87f8a6ab85c9ced3702b4ea641ad4bb5} 
+Medium&Medium priority. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High@{High}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!High@{High}}}\Hypertarget{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a655d20c1ca69519ca647684edbb2db35}\label{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a655d20c1ca69519ca647684edbb2db35} 
+High&High priority. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Critical@{Critical}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!Critical@{Critical}}}\Hypertarget{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a278d01e5af56273bae1bb99a98b370cd}\label{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0a278d01e5af56273bae1bb99a98b370cd} 
+Critical&Critical priority. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!TaskState@{TaskState}}
+\index{TaskState@{TaskState}!TaskManagerApp.Models@{TaskManagerApp.Models}}
+\doxysubsubsection{\texorpdfstring{TaskState}{TaskState}}
+{\footnotesize\ttfamily \label{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617} 
+enum \mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+Manager\+App.\+Models.\+Task\+State}}}
+
+
+
+Defines possible task lifecycle states. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pending@{Pending}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!Pending@{Pending}}}\Hypertarget{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a2d13df6f8b5e4c5af9f87e0dc39df69d}\label{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a2d13df6f8b5e4c5af9f87e0dc39df69d} 
+Pending&The task is waiting to be started. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InProgress@{InProgress}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!InProgress@{InProgress}}}\Hypertarget{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a12d868c18cb29bf58f02b504be9033fd}\label{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a12d868c18cb29bf58f02b504be9033fd} 
+In\+Progress&The task is currently being worked on. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Completed@{Completed}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!Completed@{Completed}}}\Hypertarget{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a07ca5050e697392c9ed47e6453f1453f}\label{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617a07ca5050e697392c9ed47e6453f1453f} 
+Completed&The task is finished. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OnHold@{OnHold}!TaskManagerApp.Models@{TaskManagerApp.Models}}\index{TaskManagerApp.Models@{TaskManagerApp.Models}!OnHold@{OnHold}}}\Hypertarget{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617ab0c20989fc4692ffdcb556dde07c855d}\label{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617ab0c20989fc4692ffdcb556dde07c855d} 
+On\+Hold&The task is temporarily paused. \\
+\hline
+
+\end{DoxyEnumFields}

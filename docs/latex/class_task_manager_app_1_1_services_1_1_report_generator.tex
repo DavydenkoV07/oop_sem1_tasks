@@ -1,0 +1,81 @@
+\doxysection{Task\+Manager\+App.\+Services.\+Report\+Generator Class Reference}
+\hypertarget{class_task_manager_app_1_1_services_1_1_report_generator}{}\label{class_task_manager_app_1_1_services_1_1_report_generator}\index{TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}}
+
+
+Utility class to generate reports using the \doxylink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter} interface.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_report_generator_a561580ab59a870e81e4ef95c74ab5612}{Report\+Generator}} (string header)
+\begin{DoxyCompactList}\small\item\em Initializes the generator with a custom header. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_report_generator_a464b4a828e75f7e66d7d40de4914b3e3}{Generate\+Consolidated\+Report}} (IEnumerable$<$ \mbox{\hyperlink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter}} $>$ reporters)
+\begin{DoxyCompactList}\small\item\em Generates a consolidated report from a list of \doxylink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly string \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_report_generator_a20147cb3bfbb574f9f644b520736f9c5}{\+\_\+report\+Header}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class to generate reports using the \doxylink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter} interface. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_a561580ab59a870e81e4ef95c74ab5612}\index{TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}!ReportGenerator@{ReportGenerator}}
+\index{ReportGenerator@{ReportGenerator}!TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{ReportGenerator()}{ReportGenerator()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_report_generator_a561580ab59a870e81e4ef95c74ab5612} 
+Task\+Manager\+App.\+Services.\+Report\+Generator.\+Report\+Generator (\begin{DoxyParamCaption}\item[{string}]{header}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the generator with a custom header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The header for the report. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_a464b4a828e75f7e66d7d40de4914b3e3}\index{TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}!GenerateConsolidatedReport@{GenerateConsolidatedReport}}
+\index{GenerateConsolidatedReport@{GenerateConsolidatedReport}!TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateConsolidatedReport()}{GenerateConsolidatedReport()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_report_generator_a464b4a828e75f7e66d7d40de4914b3e3} 
+string Task\+Manager\+App.\+Services.\+Report\+Generator.\+Generate\+Consolidated\+Report (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter}} $>$}]{reporters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a consolidated report from a list of \doxylink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reporters} & A collection of objects implementing \doxylink{interface_task_manager_app_1_1_models_1_1_i_task_reporter}{ITask\+Reporter}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A consolidated report string. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_report_generator_a20147cb3bfbb574f9f644b520736f9c5}\index{TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}!\_reportHeader@{\_reportHeader}}
+\index{\_reportHeader@{\_reportHeader}!TaskManagerApp.Services.ReportGenerator@{TaskManagerApp.Services.ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{\_reportHeader}{\_reportHeader}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_report_generator_a20147cb3bfbb574f9f644b520736f9c5} 
+readonly string Task\+Manager\+App.\+Services.\+Report\+Generator.\+\_\+report\+Header\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Services/\mbox{\hyperlink{_report_generator_8cs}{Report\+Generator.\+cs}}\end{DoxyCompactItemize}

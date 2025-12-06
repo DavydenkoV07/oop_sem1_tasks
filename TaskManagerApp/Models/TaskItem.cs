@@ -1,3 +1,8 @@
+/**
+* @file TaskItem.cs
+* @brief Contains the base task model TaskItem, the enumerations TaskState, PriorityLevel, and the ITaskReporter interface.
+* @namespace TaskManagerApp.Models
+*/
 using System;
 
 namespace TaskManagerApp.Models
@@ -10,10 +15,10 @@ namespace TaskManagerApp.Models
     */
     public enum TaskState
     {
-        Pending,
-        InProgress,
-        Completed,
-        OnHold 
+        Pending,///< The task is waiting to be started.
+        InProgress, ///< The task is currently being worked on.
+        Completed,  ///< The task is finished.
+        OnHold      ///< The task is temporarily paused.
     }
     
     /**
@@ -22,10 +27,10 @@ namespace TaskManagerApp.Models
      */
     public enum PriorityLevel
     {
-        Low,
-        Medium,
-        High,
-        Critical
+        Low,///< Low priority.
+        Medium,   ///< Medium priority.
+        High,     ///< High priority.
+        Critical  ///< Critical priority.
     }
 
     // === Interface for Polymorphism 2 (Dynamic) ===
@@ -53,10 +58,14 @@ namespace TaskManagerApp.Models
     {
         private DateTime _creationDate;
 
+        /// @property Title The name of the task.
         public string Title { get; set; }
+        /// @property Description The description of the task.
         public string Description { get; set; }
+        /// @property State The completion state of the task.
         public TaskState State { get; set; }
-        public DateTime CreationDate => _creationDate; 
+        /// @property CreationDate The date and time the task was created.
+        public DateTime CreationDate => _creationDate;
 
         /**
         * @brief Initializes the task.

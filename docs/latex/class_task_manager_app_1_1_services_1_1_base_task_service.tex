@@ -1,0 +1,116 @@
+\doxysection{Task\+Manager\+App.\+Services.\+Base\+Task\+Service Class Reference}
+\hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service}{}\label{class_task_manager_app_1_1_services_1_1_base_task_service}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+
+
+Provides core functionality for managing a list of tasks.  
+
+
+Inheritance diagram for Task\+Manager\+App.\+Services.\+Base\+Task\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_task_manager_app_1_1_services_1_1_base_task_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_ae4ff5010e0b852f1b697bd13a5b93218}{Add\+Task}} (\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} task)
+\begin{DoxyCompactList}\small\item\em Adds a new task to the list after validation. \end{DoxyCompactList}\item 
+IEnumerable$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_afdf854dedfdc8d3fb9dc766c9520eccf}{Get\+All\+Tasks}} ()
+\begin{DoxyCompactList}\small\item\em Returns a complete list of all current tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a03ec00e780989f7cbd4ce82f867b47f5}{Clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all tasks from the internal list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a17a2bb61b57b2897dc05a3c295ce4224}{Validate\+Task}} (\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} task)
+\begin{DoxyCompactList}\small\item\em Abstract method to validate a task before adding. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly List$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a0b43bd695428fc34acbff6170c0951e8}{\+\_\+tasks}} = new List$<$\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides core functionality for managing a list of tasks. 
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_ae4ff5010e0b852f1b697bd13a5b93218}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}!AddTask@{AddTask}}
+\index{AddTask@{AddTask}!TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+\doxysubsubsection{\texorpdfstring{AddTask()}{AddTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_base_task_service_ae4ff5010e0b852f1b697bd13a5b93218} 
+void Task\+Manager\+App.\+Services.\+Base\+Task\+Service.\+Add\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}}]{task}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new task to the list after validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & Task to add. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown when argument is null. \\
+\hline
+{\em Invalid\+Operation\+Exception} & Thrown if validation fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_a03ec00e780989f7cbd4ce82f867b47f5}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+\doxysubsubsection{\texorpdfstring{ClearAll()}{ClearAll()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_base_task_service_a03ec00e780989f7cbd4ce82f867b47f5} 
+void Task\+Manager\+App.\+Services.\+Base\+Task\+Service.\+Clear\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes all tasks from the internal list. 
+
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_afdf854dedfdc8d3fb9dc766c9520eccf}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}!GetAllTasks@{GetAllTasks}}
+\index{GetAllTasks@{GetAllTasks}!TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+\doxysubsubsection{\texorpdfstring{GetAllTasks()}{GetAllTasks()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_base_task_service_afdf854dedfdc8d3fb9dc766c9520eccf} 
+IEnumerable$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ Task\+Manager\+App.\+Services.\+Base\+Task\+Service.\+Get\+All\+Tasks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a complete list of all current tasks. 
+
+\begin{DoxyReturn}{Returns}
+IEnumerable$<$\+Task\+Item$>$ collection containing all tasks. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_a17a2bb61b57b2897dc05a3c295ce4224}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}!ValidateTask@{ValidateTask}}
+\index{ValidateTask@{ValidateTask}!TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+\doxysubsubsection{\texorpdfstring{ValidateTask()}{ValidateTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_base_task_service_a17a2bb61b57b2897dc05a3c295ce4224} 
+void Task\+Manager\+App.\+Services.\+Base\+Task\+Service.\+Validate\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}}]{task}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Abstract method to validate a task before adding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & Task to validate. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_base_task_service_a0b43bd695428fc34acbff6170c0951e8}\index{TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}!\_tasks@{\_tasks}}
+\index{\_tasks@{\_tasks}!TaskManagerApp.Services.BaseTaskService@{TaskManagerApp.Services.BaseTaskService}}
+\doxysubsubsection{\texorpdfstring{\_tasks}{\_tasks}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_base_task_service_a0b43bd695428fc34acbff6170c0951e8} 
+readonly List$<$\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}$>$ Task\+Manager\+App.\+Services.\+Base\+Task\+Service.\+\_\+tasks = new List$<$\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}$>$()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Services/\mbox{\hyperlink{_base_task_service_8cs}{Base\+Task\+Service.\+cs}}\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/**
+* @file TimedTask.cs
+* @brief Contains the TimedTask class, which inherits from TaskItem and adds deadline functionality.
+* @namespace TaskManagerApp.Models
+*/
 using System;
 
 namespace TaskManagerApp.Models
@@ -8,6 +13,7 @@ namespace TaskManagerApp.Models
     */
     public class TimedTask : TaskItem
     {
+        /// @property DueDate The final execution date for the task.
         public DateTime DueDate { get; set; }
 
         /**
@@ -33,6 +39,7 @@ namespace TaskManagerApp.Models
 
         /**
          * @brief Overrides base method to include deadline in the report.
+         * @return string The extended report, including DueDate and an OVERDUE indicator if applicable.
          */
         public override string GetTaskReport()
         {

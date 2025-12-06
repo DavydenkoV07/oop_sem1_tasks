@@ -1,0 +1,131 @@
+\doxysection{Task\+Manager\+App.\+Models.\+Timed\+Task Class Reference}
+\hypertarget{class_task_manager_app_1_1_models_1_1_timed_task}{}\label{class_task_manager_app_1_1_models_1_1_timed_task}\index{TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}}
+
+
+Represents a task with a defined deadline.  
+
+
+Inheritance diagram for Task\+Manager\+App.\+Models.\+Timed\+Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_task_manager_app_1_1_models_1_1_timed_task}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task_a8ca25bdc74dd543e7a7af68aee769336}{Timed\+Task}} (string title, string description, Date\+Time due\+Date)
+\begin{DoxyCompactList}\small\item\em Initializes the timed task. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task_a8a1be002bd6fc67dfc9bf2e91b152bca}{Is\+Overdue}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the task is overdue. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task_a4d8bdfab87708768b5a8ce593d8890e2}{Get\+Task\+Report}} ()
+\begin{DoxyCompactList}\small\item\em Overrides base method to include deadline in the report. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Manager\+App.\+Models.\+Task\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ae5aaf4cd39b3fb01c3db24e8e1f707ad}{Task\+Item}} (string title, string description)
+\begin{DoxyCompactList}\small\item\em Initializes the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aeb857309c82092d47d577dae839587c4}{Mark\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aa3adc037659015e98bf937e6c93f5b77}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to In\+Progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a8b6bff5544d324875313def61f773e11}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Pending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aab715ffea0b88456bfe38cc65a350718}{Put\+On\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to On\+Hold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ab57c94e6c1644117f634a04e84567706}{Calculate\+Age\+In\+Days}} ()
+\begin{DoxyCompactList}\small\item\em Calculates task age in days. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Date\+Time \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task_a493d52629f34c4ca510b3c837a6667ec}{Due\+Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Manager\+App.\+Models.\+Task\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a082cfa389b88d946eebe881daa8c6f1e}{Title}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_acc787a27b4f3b0647d0bd5f6b811a520}{Description}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a14ae1cd02e5c7e0ec4a36b4960a0e229}{State}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Date\+Time \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ac54168a328fee9993ccb9b02b3c27b79}{Creation\+Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a task with a defined deadline. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_a8ca25bdc74dd543e7a7af68aee769336}\index{TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}!TimedTask@{TimedTask}}
+\index{TimedTask@{TimedTask}!TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}}
+\doxysubsubsection{\texorpdfstring{TimedTask()}{TimedTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_timed_task_a8ca25bdc74dd543e7a7af68aee769336} 
+Task\+Manager\+App.\+Models.\+Timed\+Task.\+Timed\+Task (\begin{DoxyParamCaption}\item[{string}]{title}{, }\item[{string}]{description}{, }\item[{Date\+Time}]{due\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the timed task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Task name. \\
+\hline
+{\em description} & Short description. \\
+\hline
+{\em due\+Date} & The deadline for the task. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_a4d8bdfab87708768b5a8ce593d8890e2}\index{TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}!GetTaskReport@{GetTaskReport}}
+\index{GetTaskReport@{GetTaskReport}!TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}}
+\doxysubsubsection{\texorpdfstring{GetTaskReport()}{GetTaskReport()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_timed_task_a4d8bdfab87708768b5a8ce593d8890e2} 
+override string Task\+Manager\+App.\+Models.\+Timed\+Task.\+Get\+Task\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Overrides base method to include deadline in the report. 
+
+\begin{DoxyReturn}{Returns}
+string The extended report, including Due\+Date and an OVERDUE indicator if applicable. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a468bbf15e54964f4feb7baa443fb5266}{Task\+Manager\+App.\+Models.\+Task\+Item}}.
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_a8a1be002bd6fc67dfc9bf2e91b152bca}\index{TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}!IsOverdue@{IsOverdue}}
+\index{IsOverdue@{IsOverdue}!TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}}
+\doxysubsubsection{\texorpdfstring{IsOverdue()}{IsOverdue()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_timed_task_a8a1be002bd6fc67dfc9bf2e91b152bca} 
+bool Task\+Manager\+App.\+Models.\+Timed\+Task.\+Is\+Overdue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the task is overdue. 
+
+\begin{DoxyReturn}{Returns}
+True if the current date is past the Due\+Date. 
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_timed_task_a493d52629f34c4ca510b3c837a6667ec}\index{TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}!DueDate@{DueDate}}
+\index{DueDate@{DueDate}!TaskManagerApp.Models.TimedTask@{TaskManagerApp.Models.TimedTask}}
+\doxysubsubsection{\texorpdfstring{DueDate}{DueDate}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_timed_task_a493d52629f34c4ca510b3c837a6667ec} 
+Date\+Time Task\+Manager\+App.\+Models.\+Timed\+Task.\+Due\+Date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Models/\mbox{\hyperlink{_timed_task_8cs}{Timed\+Task.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,200 @@
+\doxysection{Task\+Manager\+App.\+Models.\+Task\+Item Class Reference}
+\hypertarget{class_task_manager_app_1_1_models_1_1_task_item}{}\label{class_task_manager_app_1_1_models_1_1_task_item}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+
+
+Base class for a task, storing core data and state management.  
+
+
+Inheritance diagram for Task\+Manager\+App.\+Models.\+Task\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_task_manager_app_1_1_models_1_1_task_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ae5aaf4cd39b3fb01c3db24e8e1f707ad}{Task\+Item}} (string title, string description)
+\begin{DoxyCompactList}\small\item\em Initializes the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aeb857309c82092d47d577dae839587c4}{Mark\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aa3adc037659015e98bf937e6c93f5b77}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to In\+Progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a8b6bff5544d324875313def61f773e11}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Pending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aab715ffea0b88456bfe38cc65a350718}{Put\+On\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to On\+Hold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ab57c94e6c1644117f634a04e84567706}{Calculate\+Age\+In\+Days}} ()
+\begin{DoxyCompactList}\small\item\em Calculates task age in days. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a468bbf15e54964f4feb7baa443fb5266}{Get\+Task\+Report}} ()
+\begin{DoxyCompactList}\small\item\em Generates a formatted string report for the task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a082cfa389b88d946eebe881daa8c6f1e}{Title}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_acc787a27b4f3b0647d0bd5f6b811a520}{Description}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a14ae1cd02e5c7e0ec4a36b4960a0e229}{State}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Date\+Time \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ac54168a328fee9993ccb9b02b3c27b79}{Creation\+Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Date\+Time \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_acd92b2000c73e908da20b7e227afcf2e}{\+\_\+creation\+Date}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for a task, storing core data and state management. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_ae5aaf4cd39b3fb01c3db24e8e1f707ad}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!TaskItem@{TaskItem}}
+\index{TaskItem@{TaskItem}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{TaskItem()}{TaskItem()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_ae5aaf4cd39b3fb01c3db24e8e1f707ad} 
+Task\+Manager\+App.\+Models.\+Task\+Item.\+Task\+Item (\begin{DoxyParamCaption}\item[{string}]{title}{, }\item[{string}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Task name. \\
+\hline
+{\em description} & Short description for task. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & thrown when title is empty or null. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_ab57c94e6c1644117f634a04e84567706}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!CalculateAgeInDays@{CalculateAgeInDays}}
+\index{CalculateAgeInDays@{CalculateAgeInDays}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{CalculateAgeInDays()}{CalculateAgeInDays()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_ab57c94e6c1644117f634a04e84567706} 
+double Task\+Manager\+App.\+Models.\+Task\+Item.\+Calculate\+Age\+In\+Days (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates task age in days. 
+
+\begin{DoxyReturn}{Returns}
+Task age in days. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_a468bbf15e54964f4feb7baa443fb5266}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!GetTaskReport@{GetTaskReport}}
+\index{GetTaskReport@{GetTaskReport}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{GetTaskReport()}{GetTaskReport()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_a468bbf15e54964f4feb7baa443fb5266} 
+virtual string Task\+Manager\+App.\+Models.\+Task\+Item.\+Get\+Task\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates a formatted string report for the task. 
+
+\begin{DoxyReturn}{Returns}
+Formatted string containing task details. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_task_manager_app_1_1_models_1_1_i_task_reporter_a147272dad5a614ba816cdb651d785f72}{Task\+Manager\+App.\+Models.\+ITask\+Reporter}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task_aa2ef127f57a0a0cf74405354f1d422ca}{Task\+Manager\+App.\+Models.\+Priority\+Task}}, and \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_timed_task_a4d8bdfab87708768b5a8ce593d8890e2}{Task\+Manager\+App.\+Models.\+Timed\+Task}}.
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_aeb857309c82092d47d577dae839587c4}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!MarkCompleted@{MarkCompleted}}
+\index{MarkCompleted@{MarkCompleted}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{MarkCompleted()}{MarkCompleted()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_aeb857309c82092d47d577dae839587c4} 
+void Task\+Manager\+App.\+Models.\+Task\+Item.\+Mark\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Completed. 
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_aab715ffea0b88456bfe38cc65a350718}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!PutOnHold@{PutOnHold}}
+\index{PutOnHold@{PutOnHold}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{PutOnHold()}{PutOnHold()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_aab715ffea0b88456bfe38cc65a350718} 
+void Task\+Manager\+App.\+Models.\+Task\+Item.\+Put\+On\+Hold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to On\+Hold. 
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_a8b6bff5544d324875313def61f773e11}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!Reset@{Reset}}
+\index{Reset@{Reset}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_a8b6bff5544d324875313def61f773e11} 
+void Task\+Manager\+App.\+Models.\+Task\+Item.\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Pending. 
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_aa3adc037659015e98bf937e6c93f5b77}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!Start@{Start}}
+\index{Start@{Start}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_aa3adc037659015e98bf937e6c93f5b77} 
+void Task\+Manager\+App.\+Models.\+Task\+Item.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to In\+Progress. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_acd92b2000c73e908da20b7e227afcf2e}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!\_creationDate@{\_creationDate}}
+\index{\_creationDate@{\_creationDate}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{\_creationDate}{\_creationDate}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_acd92b2000c73e908da20b7e227afcf2e} 
+Date\+Time Task\+Manager\+App.\+Models.\+Task\+Item.\+\_\+creation\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_ac54168a328fee9993ccb9b02b3c27b79}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!CreationDate@{CreationDate}}
+\index{CreationDate@{CreationDate}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{CreationDate}{CreationDate}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_ac54168a328fee9993ccb9b02b3c27b79} 
+Date\+Time Task\+Manager\+App.\+Models.\+Task\+Item.\+Creation\+Date\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_acc787a27b4f3b0647d0bd5f6b811a520}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!Description@{Description}}
+\index{Description@{Description}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_acc787a27b4f3b0647d0bd5f6b811a520} 
+string Task\+Manager\+App.\+Models.\+Task\+Item.\+Description\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_a14ae1cd02e5c7e0ec4a36b4960a0e229}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!State@{State}}
+\index{State@{State}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_a14ae1cd02e5c7e0ec4a36b4960a0e229} 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} Task\+Manager\+App.\+Models.\+Task\+Item.\+State\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_task_item_a082cfa389b88d946eebe881daa8c6f1e}\index{TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}!Title@{Title}}
+\index{Title@{Title}!TaskManagerApp.Models.TaskItem@{TaskManagerApp.Models.TaskItem}}
+\doxysubsubsection{\texorpdfstring{Title}{Title}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_task_item_a082cfa389b88d946eebe881daa8c6f1e} 
+string Task\+Manager\+App.\+Models.\+Task\+Item.\+Title\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Models/\mbox{\hyperlink{_task_item_8cs}{Task\+Item.\+cs}}\end{DoxyCompactItemize}

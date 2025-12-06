@@ -1,3 +1,8 @@
+/**
+* @file BaseTaskService.cs
+* @brief Contains the abstract base class BaseTaskService for task management.
+* @namespace TaskManagerApp.Services
+*/
 using System;
 using System.Collections.Generic;
 using TaskManagerApp.Models;
@@ -10,6 +15,8 @@ namespace TaskManagerApp.Services
     */
     public abstract class BaseTaskService
     {
+        /// @protected
+        /// @var _tasks The list of all tasks managed by the service.
         protected readonly List<TaskItem> _tasks = new List<TaskItem>();
 
         /**

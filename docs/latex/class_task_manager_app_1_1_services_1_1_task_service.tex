@@ -1,0 +1,249 @@
+\doxysection{Task\+Manager\+App.\+Services.\+Task\+Service Class Reference}
+\hypertarget{class_task_manager_app_1_1_services_1_1_task_service}{}\label{class_task_manager_app_1_1_services_1_1_task_service}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+
+
+Manages a list of tasks, providing filtering and statistics.  
+
+
+Inheritance diagram for Task\+Manager\+App.\+Services.\+Task\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_task_manager_app_1_1_services_1_1_task_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_aad4494645f488fdc2086c9efb8ecb5f2}{Task\+Service}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_task_manager_app_1_1_services_1_1_task_service}{Task\+Service} constructor. \end{DoxyCompactList}\item 
+IEnumerable$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_ab177e5bb11c25611768269c29e731683}{Get\+By\+State}} (\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} state)
+\begin{DoxyCompactList}\small\item\em Returns a list of tasks with a specified state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_aa18ed802fac9cecf4adc7adf3d2d0a9b}{Remove\+Task}} (string title)
+\begin{DoxyCompactList}\small\item\em Removes a task from the list by title. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}? \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a8ebd0d1a67f89d3a311a9644ca6c2016}{Find\+Task}} (string title)
+\begin{DoxyCompactList}\small\item\em Finds the first task with the specified name. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a50dea8442335292597e2087aab258211}{Get\+Completion\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the percentage of tasks completed in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a338bfc777efee291a29f59df4525c90d}{Assign\+User}} (string task\+Title, \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Assigns a user to a task by title. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}? \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a7c7ef5be837f43bc3cdc0c16d4e6cfa7}{Get\+Assigned\+User}} (string task\+Title)
+\begin{DoxyCompactList}\small\item\em Gets the assigned user for a task. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a32e91d2b0ac53b430b96dce81becd019}{Get\+Summary}} ()
+\begin{DoxyCompactList}\small\item\em Converts all tasks to a summary string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service}{Task\+Manager\+App.\+Services.\+Base\+Task\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_ae4ff5010e0b852f1b697bd13a5b93218}{Add\+Task}} (\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} task)
+\begin{DoxyCompactList}\small\item\em Adds a new task to the list after validation. \end{DoxyCompactList}\item 
+IEnumerable$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_afdf854dedfdc8d3fb9dc766c9520eccf}{Get\+All\+Tasks}} ()
+\begin{DoxyCompactList}\small\item\em Returns a complete list of all current tasks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a03ec00e780989f7cbd4ce82f867b47f5}{Clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all tasks from the internal list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_a9d76f6799aa664df5653bc2aeaad508a}{Validate\+Task}} (\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} task)
+\begin{DoxyCompactList}\small\item\em Implementation of task validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service}{Task\+Manager\+App.\+Services.\+Base\+Task\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a17a2bb61b57b2897dc05a3c295ce4224}{Validate\+Task}} (\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} task)
+\begin{DoxyCompactList}\small\item\em Abstract method to validate a task before adding. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Dictionary$<$ string, \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_task_service_aae844b752a9b2dea4c7e0fd8e3552b39}{\+\_\+assigned\+Users}} = new Dictionary$<$string, \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service}{Task\+Manager\+App.\+Services.\+Base\+Task\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly List$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ \mbox{\hyperlink{class_task_manager_app_1_1_services_1_1_base_task_service_a0b43bd695428fc34acbff6170c0951e8}{\+\_\+tasks}} = new List$<$\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a list of tasks, providing filtering and statistics. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_aad4494645f488fdc2086c9efb8ecb5f2}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!TaskService@{TaskService}}
+\index{TaskService@{TaskService}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{TaskService()}{TaskService()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_aad4494645f488fdc2086c9efb8ecb5f2} 
+Task\+Manager\+App.\+Services.\+Task\+Service.\+Task\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_task_manager_app_1_1_services_1_1_task_service}{Task\+Service} constructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a338bfc777efee291a29f59df4525c90d}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!AssignUser@{AssignUser}}
+\index{AssignUser@{AssignUser}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{AssignUser()}{AssignUser()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a338bfc777efee291a29f59df4525c90d} 
+bool Task\+Manager\+App.\+Services.\+Task\+Service.\+Assign\+User (\begin{DoxyParamCaption}\item[{string}]{task\+Title}{, }\item[{\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns a user to a task by title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Title} & The title of the task. \\
+\hline
+{\em user} & The user to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if assignment was successful, false if task was not found. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a8ebd0d1a67f89d3a311a9644ca6c2016}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!FindTask@{FindTask}}
+\index{FindTask@{FindTask}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{FindTask()}{FindTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a8ebd0d1a67f89d3a311a9644ca6c2016} 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}? Task\+Manager\+App.\+Services.\+Task\+Service.\+Find\+Task (\begin{DoxyParamCaption}\item[{string}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the first task with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The name of the task to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item} if the task is found, otherwise returns null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown if task title is null. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a7c7ef5be837f43bc3cdc0c16d4e6cfa7}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!GetAssignedUser@{GetAssignedUser}}
+\index{GetAssignedUser@{GetAssignedUser}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{GetAssignedUser()}{GetAssignedUser()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a7c7ef5be837f43bc3cdc0c16d4e6cfa7} 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}? Task\+Manager\+App.\+Services.\+Task\+Service.\+Get\+Assigned\+User (\begin{DoxyParamCaption}\item[{string}]{task\+Title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the assigned user for a task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Title} & The title of the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_task_manager_app_1_1_models_1_1_user}{User} object or null if no user is assigned. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_ab177e5bb11c25611768269c29e731683}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!GetByState@{GetByState}}
+\index{GetByState@{GetByState}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{GetByState()}{GetByState()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_ab177e5bb11c25611768269c29e731683} 
+IEnumerable$<$ \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}} $>$ Task\+Manager\+App.\+Services.\+Task\+Service.\+Get\+By\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}}}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a list of tasks with a specified state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Task State to filter by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IEnumerable$<$\+Task\+Item$>$ collection containing tasks that have the specified state. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a50dea8442335292597e2087aab258211}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!GetCompletionRate@{GetCompletionRate}}
+\index{GetCompletionRate@{GetCompletionRate}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{GetCompletionRate()}{GetCompletionRate()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a50dea8442335292597e2087aab258211} 
+double Task\+Manager\+App.\+Services.\+Task\+Service.\+Get\+Completion\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the percentage of tasks completed in the list. 
+
+\begin{DoxyReturn}{Returns}
+Percentage of tasks completed as a decimal (from 0.\+0 to 1.\+0). 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a32e91d2b0ac53b430b96dce81becd019}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!GetSummary@{GetSummary}}
+\index{GetSummary@{GetSummary}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{GetSummary()}{GetSummary()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a32e91d2b0ac53b430b96dce81becd019} 
+string Task\+Manager\+App.\+Services.\+Task\+Service.\+Get\+Summary (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts all tasks to a summary string. 
+
+\begin{DoxyReturn}{Returns}
+A string summary of all tasks. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_aa18ed802fac9cecf4adc7adf3d2d0a9b}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!RemoveTask@{RemoveTask}}
+\index{RemoveTask@{RemoveTask}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{RemoveTask()}{RemoveTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_aa18ed802fac9cecf4adc7adf3d2d0a9b} 
+bool Task\+Manager\+App.\+Services.\+Task\+Service.\+Remove\+Task (\begin{DoxyParamCaption}\item[{string}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a task from the list by title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of task that needs to be removed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown when task title is null. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+True if the task was found and successfully removed, otherwise returns false. 
+\end{DoxyReturn}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_a9d76f6799aa664df5653bc2aeaad508a}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!ValidateTask@{ValidateTask}}
+\index{ValidateTask@{ValidateTask}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{ValidateTask()}{ValidateTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_a9d76f6799aa664df5653bc2aeaad508a} 
+override void Task\+Manager\+App.\+Services.\+Task\+Service.\+Validate\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Item}}}]{task}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Implementation of task validation. 
+
+Ensures no duplicate title. 
+\begin{DoxyParams}{Parameters}
+{\em task} & Task to validate. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & Thrown if a task with the same title already exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_task_manager_app_1_1_services_1_1_task_service_aae844b752a9b2dea4c7e0fd8e3552b39}\index{TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}!\_assignedUsers@{\_assignedUsers}}
+\index{\_assignedUsers@{\_assignedUsers}!TaskManagerApp.Services.TaskService@{TaskManagerApp.Services.TaskService}}
+\doxysubsubsection{\texorpdfstring{\_assignedUsers}{\_assignedUsers}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_services_1_1_task_service_aae844b752a9b2dea4c7e0fd8e3552b39} 
+readonly Dictionary$<$string, \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}$>$ Task\+Manager\+App.\+Services.\+Task\+Service.\+\_\+assigned\+Users = new Dictionary$<$string, \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user}{User}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Services/\mbox{\hyperlink{_task_service_8cs}{Task\+Service.\+cs}}\end{DoxyCompactItemize}
