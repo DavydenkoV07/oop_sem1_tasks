@@ -1,0 +1,110 @@
+\doxysection{Task\+Manager\+App.\+Models.\+User Class Reference}
+\hypertarget{class_task_manager_app_1_1_models_1_1_user}{}\label{class_task_manager_app_1_1_models_1_1_user}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+
+
+Represents a system user.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_ae2d9e2b2d85ffa21c9495055d9b8d1f5}{User}} (string username, string email)
+\begin{DoxyCompactList}\small\item\em Initializes a new user with a unique ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_a624ca424b3f350090b3df5e218df5f55}{Is\+Valid\+Email\+Format}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the email is a valid format (simple check). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_abb3a24bdb0c5de8fd944e048b9e7b96b}{User\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_aa349c4488b99b5ad4dac106b1cc70119}{Username}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_af54af5c1df79c065006c83f5c8d98a22}{Email}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_user_a284439ba025c70f9313f35b3e2b0458c}{\+\_\+next\+Id}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a system user. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_ae2d9e2b2d85ffa21c9495055d9b8d1f5}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!User@{User}}
+\index{User@{User}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_ae2d9e2b2d85ffa21c9495055d9b8d1f5} 
+Task\+Manager\+App.\+Models.\+User.\+User (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new user with a unique ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & \doxylink{class_task_manager_app_1_1_models_1_1_user}{User}\textquotesingle{}s chosen username. \\
+\hline
+{\em email} & \doxylink{class_task_manager_app_1_1_models_1_1_user}{User}\textquotesingle{}s email address. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_a624ca424b3f350090b3df5e218df5f55}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!IsValidEmailFormat@{IsValidEmailFormat}}
+\index{IsValidEmailFormat@{IsValidEmailFormat}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{IsValidEmailFormat()}{IsValidEmailFormat()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_a624ca424b3f350090b3df5e218df5f55} 
+bool Task\+Manager\+App.\+Models.\+User.\+Is\+Valid\+Email\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the email is a valid format (simple check). 
+
+\begin{DoxyReturn}{Returns}
+True if the email contains \textquotesingle{}@\textquotesingle{} and \textquotesingle{}.\textquotesingle{}, false otherwise. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_a284439ba025c70f9313f35b3e2b0458c}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!\_nextId@{\_nextId}}
+\index{\_nextId@{\_nextId}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{\_nextId}{\_nextId}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_a284439ba025c70f9313f35b3e2b0458c} 
+int Task\+Manager\+App.\+Models.\+User.\+\_\+next\+Id = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_af54af5c1df79c065006c83f5c8d98a22}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!Email@{Email}}
+\index{Email@{Email}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{Email}{Email}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_af54af5c1df79c065006c83f5c8d98a22} 
+string Task\+Manager\+App.\+Models.\+User.\+Email\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_abb3a24bdb0c5de8fd944e048b9e7b96b}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!UserId@{UserId}}
+\index{UserId@{UserId}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{UserId}{UserId}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_abb3a24bdb0c5de8fd944e048b9e7b96b} 
+int Task\+Manager\+App.\+Models.\+User.\+User\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_user_aa349c4488b99b5ad4dac106b1cc70119}\index{TaskManagerApp.Models.User@{TaskManagerApp.Models.User}!Username@{Username}}
+\index{Username@{Username}!TaskManagerApp.Models.User@{TaskManagerApp.Models.User}}
+\doxysubsubsection{\texorpdfstring{Username}{Username}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_user_aa349c4488b99b5ad4dac106b1cc70119} 
+string Task\+Manager\+App.\+Models.\+User.\+Username\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Models/\mbox{\hyperlink{_user_8cs}{User.\+cs}}\end{DoxyCompactItemize}

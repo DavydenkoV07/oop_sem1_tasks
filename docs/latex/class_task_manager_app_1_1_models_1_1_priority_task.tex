@@ -1,0 +1,125 @@
+\doxysection{Task\+Manager\+App.\+Models.\+Priority\+Task Class Reference}
+\hypertarget{class_task_manager_app_1_1_models_1_1_priority_task}{}\label{class_task_manager_app_1_1_models_1_1_priority_task}\index{TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}}
+
+
+Represents a task with a specific priority level.  
+
+
+Inheritance diagram for Task\+Manager\+App.\+Models.\+Priority\+Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_task_manager_app_1_1_models_1_1_priority_task}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task_a1930d4288c52366400165663bccbdd80}{Priority\+Task}} (string title, string description, \mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Priority\+Level}} priority)
+\begin{DoxyCompactList}\small\item\em Initializes the priority task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task_a5dc3b69d40de0ffea509eea899731490}{Increase\+Priority}} ()
+\begin{DoxyCompactList}\small\item\em Increases the task priority level (if not already Critical). \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task_aa2ef127f57a0a0cf74405354f1d422ca}{Get\+Task\+Report}} ()
+\begin{DoxyCompactList}\small\item\em Overrides base method to include priority in the report. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Manager\+App.\+Models.\+Task\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ae5aaf4cd39b3fb01c3db24e8e1f707ad}{Task\+Item}} (string title, string description)
+\begin{DoxyCompactList}\small\item\em Initializes the task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aeb857309c82092d47d577dae839587c4}{Mark\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aa3adc037659015e98bf937e6c93f5b77}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to In\+Progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a8b6bff5544d324875313def61f773e11}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to Pending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_aab715ffea0b88456bfe38cc65a350718}{Put\+On\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Changes \doxylink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State} to On\+Hold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ab57c94e6c1644117f634a04e84567706}{Calculate\+Age\+In\+Days}} ()
+\begin{DoxyCompactList}\small\item\em Calculates task age in days. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Priority\+Level}} \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_priority_task_ad8b759b3d9494386c34530b12e39fbfa}{Priority}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item}{Task\+Manager\+App.\+Models.\+Task\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a082cfa389b88d946eebe881daa8c6f1e}{Title}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_acc787a27b4f3b0647d0bd5f6b811a520}{Description}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_a8632f39f6a12084b341f611ea69fc617}{Task\+State}} \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a14ae1cd02e5c7e0ec4a36b4960a0e229}{State}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Date\+Time \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_ac54168a328fee9993ccb9b02b3c27b79}{Creation\+Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a task with a specific priority level. 
+
+\label{doc-constructors}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_a1930d4288c52366400165663bccbdd80}\index{TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}!PriorityTask@{PriorityTask}}
+\index{PriorityTask@{PriorityTask}!TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}}
+\doxysubsubsection{\texorpdfstring{PriorityTask()}{PriorityTask()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_priority_task_a1930d4288c52366400165663bccbdd80} 
+Task\+Manager\+App.\+Models.\+Priority\+Task.\+Priority\+Task (\begin{DoxyParamCaption}\item[{string}]{title}{, }\item[{string}]{description}{, }\item[{\mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Priority\+Level}}}]{priority}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the priority task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Task name. \\
+\hline
+{\em description} & Short description. \\
+\hline
+{\em priority} & Level of priority. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_aa2ef127f57a0a0cf74405354f1d422ca}\index{TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}!GetTaskReport@{GetTaskReport}}
+\index{GetTaskReport@{GetTaskReport}!TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}}
+\doxysubsubsection{\texorpdfstring{GetTaskReport()}{GetTaskReport()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_priority_task_aa2ef127f57a0a0cf74405354f1d422ca} 
+override string Task\+Manager\+App.\+Models.\+Priority\+Task.\+Get\+Task\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Overrides base method to include priority in the report. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_task_manager_app_1_1_models_1_1_task_item_a468bbf15e54964f4feb7baa443fb5266}{Task\+Manager\+App.\+Models.\+Task\+Item}}.
+
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_a5dc3b69d40de0ffea509eea899731490}\index{TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}!IncreasePriority@{IncreasePriority}}
+\index{IncreasePriority@{IncreasePriority}!TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}}
+\doxysubsubsection{\texorpdfstring{IncreasePriority()}{IncreasePriority()}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_priority_task_a5dc3b69d40de0ffea509eea899731490} 
+void Task\+Manager\+App.\+Models.\+Priority\+Task.\+Increase\+Priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increases the task priority level (if not already Critical). 
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_task_manager_app_1_1_models_1_1_priority_task_ad8b759b3d9494386c34530b12e39fbfa}\index{TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}!Priority@{Priority}}
+\index{Priority@{Priority}!TaskManagerApp.Models.PriorityTask@{TaskManagerApp.Models.PriorityTask}}
+\doxysubsubsection{\texorpdfstring{Priority}{Priority}}
+{\footnotesize\ttfamily \label{class_task_manager_app_1_1_models_1_1_priority_task_ad8b759b3d9494386c34530b12e39fbfa} 
+\mbox{\hyperlink{namespace_task_manager_app_1_1_models_ab848f77bd58a760214ed4140a5c3dae0}{Priority\+Level}} Task\+Manager\+App.\+Models.\+Priority\+Task.\+Priority\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Task\+Manager\+App/\+Models/\mbox{\hyperlink{_priority_task_8cs}{Priority\+Task.\+cs}}\end{DoxyCompactItemize}
