@@ -30,6 +30,9 @@ namespace TaskManagerApp.App
         public void RunDemo()
         {
             Console.WriteLine("=== Task Manager Application Demo ===");
+
+            
+            _taskService.LoadTasksFromJson();
             
             // 1. Creating different types of tasks
             var simpleTask = new TaskItem("Buy groceries", "Milk, bread, and eggs.");
@@ -71,6 +74,10 @@ namespace TaskManagerApp.App
             // 7. Outputting final statistics
             Console.WriteLine("\n--- Final Summary ---");
             Console.WriteLine(_taskService.GetSummary()); 
+
+            
+            Console.WriteLine("\n--- Saving Data ---");
+            _taskService.SaveTasksToJson();
         }
     }
     

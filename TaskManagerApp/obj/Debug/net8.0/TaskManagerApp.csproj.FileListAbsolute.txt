@@ -28,3 +28,6 @@ D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\refint\
 D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.pdb
 D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.genruntimeconfig.cache
 D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\ref\TaskManagerApp.dll
+D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\TaskManagerApp.csproj.AssemblyReference.cache
+D:\Vika\universiti\OOP\TaskManagerAppOOP\TaskManagerApp\obj\Debug\net8.0\TaskMana.3B1C9CD7.Up2Date

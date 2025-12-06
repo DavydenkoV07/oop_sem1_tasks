@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TaskManagerApp.Models;
+using Newtonsoft.Json; 
+using System.IO;   
 
 namespace TaskManagerApp.Services
 {
@@ -130,5 +132,79 @@ namespace TaskManagerApp.Services
         {
             return $"Total Tasks: {_tasks.Count}. Completed: {GetByState(TaskState.Completed).Count()}. Rate: {GetCompletionRate():P2}";
         }
+
+        //-------Lab3--------
+
+        /**
+        * @brief Saves the current list of tasks to a JSON file.
+        * @details Uses Newtonsoft.Json to serialize the _tasks list.
+        * @param filePath Path to the file to save (default: "tasks.json").
+        * @exception Exception Thrown if saving fails (e.g., file access error).
+        */
+        public void SaveTasksToJson(string filePath = "tasks.json")
+        {
+            try
+            {
+                // 1. Serialization: Converting a C# object (_tasks) to a JSON string.
+                // Formatting.Indented makes the file human-readable.
+                string json = JsonConvert.SerializeObject(_tasks, Formatting.Indented);
+                
+                // 2. Writing a line to a file.
+                File.WriteAllText(filePath, json);
+                Console.WriteLine($"[Serialization] Tasks saved successfully to: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Error Saving] Failed to save tasks to JSON: {ex.Message}");
+                throw; 
+            }
+        }
+
+        /**
+        * @brief Loads a list of tasks from a JSON file and restores the state of the service.
+        * @details Uses Newtonsoft.Json to deserialize the list of tasks.
+        * @param filePath Path to the file to load (default: "tasks.json").
+        */
+        public void LoadTasksFromJson(string filePath = "tasks.json")
+        {
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("[Deserialization] Save file not found. Starting with an empty list.");
+                return;
+            }
+
+            try
+            {
+                // 1. Reading a line from a file.
+                string json = File.ReadAllText(filePath);
+
+                // 2. Deserialization: Convert JSON string back to C# list (_tasks).
+                // Important: Newtonsoft.Json correctly handles inherited types (TimedTask, PriorityTask),
+                // if they were serialized correctly, but for simplicity we deserialize to List<TaskItem>.
+                var loadedTasks = JsonConvert.DeserializeObject<List<TaskItem>>(json, new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.Auto // Allows for correct deserialization of derived classes
+                });
+
+
+                // 3. Replace the current list with the loaded one.
+                _tasks.Clear();
+                if (loadedTasks != null)
+                {
+                    _tasks.AddRange(loadedTasks);
+                    Console.WriteLine($"[Deserialization] {_tasks.Count} tasks loaded successfully.");
+                }
+            }
+            catch (JsonException jEx)
+            {
+                Console.WriteLine($"[Error Loading] Failed to deserialize JSON data (file corrupted?): {jEx.Message}");
+                // You can try deleting the file or starting with an empty list.
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Error Loading] An unexpected error occurred while loading: {ex.Message}");
+            }
+        }
     }
+
 }
