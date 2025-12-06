@@ -31,7 +31,7 @@ namespace TaskManagerApp.App
         {
             Console.WriteLine("=== Task Manager Application Demo ===");
 
-            // !!! НОВИЙ ВИКЛИК: Завантажуємо старі дані перед створенням нових !!!
+            
             _taskService.LoadTasksFromJson();
             
             // 1. Creating different types of tasks
@@ -75,7 +75,7 @@ namespace TaskManagerApp.App
             Console.WriteLine("\n--- Final Summary ---");
             Console.WriteLine(_taskService.GetSummary()); 
 
-            // В кінці демо: ПОТІМ ЗБЕРІГАЄМО
+            
             Console.WriteLine("\n--- Saving Data ---");
             _taskService.SaveTasksToJson();
         }

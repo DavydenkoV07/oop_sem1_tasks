@@ -133,23 +133,23 @@ namespace TaskManagerApp.Services
             return $"Total Tasks: {_tasks.Count}. Completed: {GetByState(TaskState.Completed).Count()}. Rate: {GetCompletionRate():P2}";
         }
 
-//       Lab3
+        //-------Lab3--------
 
-            /**
-        * @brief Зберігає поточний список завдань у файл JSON.
-        * @details Використовує Newtonsoft.Json для серіалізації списку _tasks.
-        * @param filePath Шлях до файлу для збереження (за замовчуванням: "tasks.json").
+        /**
+        * @brief Saves the current list of tasks to a JSON file.
+        * @details Uses Newtonsoft.Json to serialize the _tasks list.
+        * @param filePath Path to the file to save (default: "tasks.json").
         * @exception Exception Thrown if saving fails (e.g., file access error).
         */
         public void SaveTasksToJson(string filePath = "tasks.json")
         {
             try
             {
-                // 1. Серіалізація: перетворення об'єкта C# (_tasks) у рядок JSON.
-                // Formatting.Indented робить файл читабельним для людини.
+                // 1. Serialization: Converting a C# object (_tasks) to a JSON string.
+                // Formatting.Indented makes the file human-readable.
                 string json = JsonConvert.SerializeObject(_tasks, Formatting.Indented);
                 
-                // 2. Запис рядка у файл.
+                // 2. Writing a line to a file.
                 File.WriteAllText(filePath, json);
                 Console.WriteLine($"[Serialization] Tasks saved successfully to: {filePath}");
             }
@@ -161,9 +161,9 @@ namespace TaskManagerApp.Services
         }
 
         /**
-        * @brief Завантажує список завдань з файлу JSON та відновлює стан сервісу.
-        * @details Використовує Newtonsoft.Json для десеріалізації списку завдань.
-        * @param filePath Шлях до файлу для завантаження (за замовчуванням: "tasks.json").
+        * @brief Loads a list of tasks from a JSON file and restores the state of the service.
+        * @details Uses Newtonsoft.Json to deserialize the list of tasks.
+        * @param filePath Path to the file to load (default: "tasks.json").
         */
         public void LoadTasksFromJson(string filePath = "tasks.json")
         {
@@ -175,19 +175,19 @@ namespace TaskManagerApp.Services
 
             try
             {
-                // 1. Читання рядка з файлу.
+                // 1. Reading a line from a file.
                 string json = File.ReadAllText(filePath);
 
-                // 2. Десеріалізація: перетворення рядка JSON назад у список C# (_tasks).
-                // Важливо: Newtonsoft.Json коректно обробляє успадковані типи (TimedTask, PriorityTask), 
-                // якщо вони були серіалізовані правильно, але для простоти ми десеріалізуємо у List<TaskItem>.
+                // 2. Deserialization: Convert JSON string back to C# list (_tasks).
+                // Important: Newtonsoft.Json correctly handles inherited types (TimedTask, PriorityTask),
+                // if they were serialized correctly, but for simplicity we deserialize to List<TaskItem>.
                 var loadedTasks = JsonConvert.DeserializeObject<List<TaskItem>>(json, new JsonSerializerSettings
                 {
-                    TypeNameHandling = TypeNameHandling.Auto // Дозволяє коректно десеріалізувати похідні класи
+                    TypeNameHandling = TypeNameHandling.Auto // Allows for correct deserialization of derived classes
                 });
 
 
-                // 3. Заміна поточного списку завантаженим.
+                // 3. Replace the current list with the loaded one.
                 _tasks.Clear();
                 if (loadedTasks != null)
                 {
@@ -198,7 +198,7 @@ namespace TaskManagerApp.Services
             catch (JsonException jEx)
             {
                 Console.WriteLine($"[Error Loading] Failed to deserialize JSON data (file corrupted?): {jEx.Message}");
-                // Можна спробувати видалити файл або почати з порожнього списку.
+                // You can try deleting the file or starting with an empty list.
             }
             catch (Exception ex)
             {
