@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "i2QZIdFP66M=",
+  "dgSpecHash": "iMbMeygG5Gc=",
   "success": true,
   "projectFilePath": "D:\\Vika\\universiti\\OOP\\TaskManagerAppOOP\\TaskManagerApp\\TaskManagerApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vika\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

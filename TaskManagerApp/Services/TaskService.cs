@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TaskManagerApp.Models;
+using Newtonsoft.Json; 
+using System.IO;   
 
 namespace TaskManagerApp.Services
 {
@@ -130,5 +132,79 @@ namespace TaskManagerApp.Services
         {
             return $"Total Tasks: {_tasks.Count}. Completed: {GetByState(TaskState.Completed).Count()}. Rate: {GetCompletionRate():P2}";
         }
+
+//       Lab3
+
+            /**
+        * @brief Зберігає поточний список завдань у файл JSON.
+        * @details Використовує Newtonsoft.Json для серіалізації списку _tasks.
+        * @param filePath Шлях до файлу для збереження (за замовчуванням: "tasks.json").
+        * @exception Exception Thrown if saving fails (e.g., file access error).
+        */
+        public void SaveTasksToJson(string filePath = "tasks.json")
+        {
+            try
+            {
+                // 1. Серіалізація: перетворення об'єкта C# (_tasks) у рядок JSON.
+                // Formatting.Indented робить файл читабельним для людини.
+                string json = JsonConvert.SerializeObject(_tasks, Formatting.Indented);
+                
+                // 2. Запис рядка у файл.
+                File.WriteAllText(filePath, json);
+                Console.WriteLine($"[Serialization] Tasks saved successfully to: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Error Saving] Failed to save tasks to JSON: {ex.Message}");
+                throw; 
+            }
+        }
+
+        /**
+        * @brief Завантажує список завдань з файлу JSON та відновлює стан сервісу.
+        * @details Використовує Newtonsoft.Json для десеріалізації списку завдань.
+        * @param filePath Шлях до файлу для завантаження (за замовчуванням: "tasks.json").
+        */
+        public void LoadTasksFromJson(string filePath = "tasks.json")
+        {
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("[Deserialization] Save file not found. Starting with an empty list.");
+                return;
+            }
+
+            try
+            {
+                // 1. Читання рядка з файлу.
+                string json = File.ReadAllText(filePath);
+
+                // 2. Десеріалізація: перетворення рядка JSON назад у список C# (_tasks).
+                // Важливо: Newtonsoft.Json коректно обробляє успадковані типи (TimedTask, PriorityTask), 
+                // якщо вони були серіалізовані правильно, але для простоти ми десеріалізуємо у List<TaskItem>.
+                var loadedTasks = JsonConvert.DeserializeObject<List<TaskItem>>(json, new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.Auto // Дозволяє коректно десеріалізувати похідні класи
+                });
+
+
+                // 3. Заміна поточного списку завантаженим.
+                _tasks.Clear();
+                if (loadedTasks != null)
+                {
+                    _tasks.AddRange(loadedTasks);
+                    Console.WriteLine($"[Deserialization] {_tasks.Count} tasks loaded successfully.");
+                }
+            }
+            catch (JsonException jEx)
+            {
+                Console.WriteLine($"[Error Loading] Failed to deserialize JSON data (file corrupted?): {jEx.Message}");
+                // Можна спробувати видалити файл або почати з порожнього списку.
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Error Loading] An unexpected error occurred while loading: {ex.Message}");
+            }
+        }
     }
+
 }
